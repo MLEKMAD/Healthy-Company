@@ -8,10 +8,10 @@
 		<version>2.2.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.HealthCare</groupId>
-	<artifactId>User_service</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>User_service</name>
+	<name>Test_service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
