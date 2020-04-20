@@ -1,0 +1,6 @@
+com\example\demo\models\ChefProjet.class
+com\example\demo\services\ChefProjetServices.class
+com\example\demo\repositories\ChefProjetRepository.class
+com\example\demo\controllers\ChefProjetController.class
+com\example\demo\repositories\ChefProjetNotFoundException.class
+com\example\demo\UserServiceApplication.class
