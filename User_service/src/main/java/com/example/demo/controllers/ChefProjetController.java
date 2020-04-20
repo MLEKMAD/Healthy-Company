@@ -13,7 +13,10 @@ import com.example.demo.models.ChefProjet;
 import com.example.demo.repositories.ChefProjetNotFoundException;
 import com.example.demo.services.ChefProjetServices;
 
+import io.swagger.annotations.Api;
 
+
+@Api( value="Chef de projet Api ",description= "API pour les opérations CRUD sur les Chefs de projet.")
 @RestController
 public class ChefProjetController {
 
@@ -21,33 +24,28 @@ public class ChefProjetController {
 	  @Autowired
 		ChefProjetServices chefprojetservice;
 
-	    @RequestMapping("/chefprojet/all")
-	    //@ApiParam(value="find all employes")
+	    @RequestMapping(method=RequestMethod.GET,value="/chefprojet/all")
 	    public List<ChefProjet> getAllChefProjet(){
 	    	System.out.println("get all employes controller");
 	        return chefprojetservice.getAllChefProjet();
 	    }
 
-	    @RequestMapping("/chefprojet/{id_emp}")
-	    //@ApiParam(value="find employe by id")
+	    @RequestMapping(method=RequestMethod.GET,value="/chefprojet/{id_chef_projet}")
 	    public ChefProjet getChefProjet(@PathVariable long id_chef_projet) throws ChefProjetNotFoundException {
 	        return chefprojetservice.getChefProjet(id_chef_projet);
 	    }
 
 	    @RequestMapping(method=RequestMethod.POST,value="/chefprojet")
-	    //@ApiParam(value="create new employe")
 	    public ChefProjet createChefProjet(@RequestBody ChefProjet chefprojet){
 	        return chefprojetservice.createChefProjet(chefprojet);
 	    }
 
 	    @RequestMapping(method=RequestMethod.PUT,value="/chefprojet")
-	    //@ApiParam(value="update employe")
 	    public void updateChefProjet(@RequestBody ChefProjet chefprojet) throws ChefProjetNotFoundException {
 	    	chefprojetservice.updateChefProjet(chefprojet);
 	    }
 
 	    @RequestMapping(method=RequestMethod.DELETE,value="/chefprojet/{id_chef_projet}")
-	    //@ApiParam(value="Delete employe")
 	    public void deleteChefProjet(@PathVariable long id_chef_projet) throws ChefProjetNotFoundException {
 	    	chefprojetservice.deleteChefProjet(id_chef_projet);
 	    }

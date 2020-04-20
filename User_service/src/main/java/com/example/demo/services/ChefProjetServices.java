@@ -22,14 +22,14 @@ public class ChefProjetServices {
 
     public List<ChefProjet> getAllChefProjet() {
     	System.out.println("get all employe service");
-        List<ChefProjet> Employes=(List<ChefProjet>) ChefProjetRepo.findAll();
-    	return Employes;
+        List<ChefProjet> chefprojets=(List<ChefProjet>) ChefProjetRepo.findAll();
+    	return chefprojets;
     }
 
-    public ChefProjet getChefProjet(long id_emp) throws ChefProjetNotFoundException {
+    public ChefProjet getChefProjet(long id_chef_projet) throws ChefProjetNotFoundException {
     	ChefProjet chefprojet = ChefProjetRepo
-        		.findById(id_emp)
-        		.orElseThrow(() -> new ChefProjetNotFoundException(id_emp));
+        		.findById(id_chef_projet)
+        		.orElseThrow(() -> new ChefProjetNotFoundException(id_chef_projet));
         return chefprojet;
     }
 

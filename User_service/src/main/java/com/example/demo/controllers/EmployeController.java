@@ -13,6 +13,9 @@ import com.example.demo.models.Employe;
 import com.example.demo.repositories.EmployeNotFoundException;
 import com.example.demo.services.EmployeServices;
 
+import io.swagger.annotations.Api;
+
+@Api( value="Employe Api ",description =  "API pour les opérations CRUD sur les employes.")
 @RestController
 public class EmployeController {
 
@@ -20,33 +23,28 @@ public class EmployeController {
 	 	@Autowired
 	 	EmployeServices employeservice;
 
-	    @RequestMapping("/employe/all")
-	    //@ApiParam(value="find all employes")
+	    @RequestMapping(method=RequestMethod.GET,value="/employe/all")
 	    public List<Employe> getAllChefProjet(){
 	    	System.out.println("get all employes controller");
 	        return employeservice.getAllChefProjet();
 	    }
 
-	    @RequestMapping("/employe/{id_emp}")
-	    //@ApiParam(value="find employe by id")
+	    @RequestMapping(method=RequestMethod.GET,value="/employe/{id_emp}")
 	    public Employe getChefProjet(@PathVariable long id_emp) throws EmployeNotFoundException {
 	        return employeservice.getChefProjet(id_emp);
 	    }
 
 	    @RequestMapping(method=RequestMethod.POST,value="/employe")
-	    //@ApiParam(value="create new employe")
 	    public Employe createChefProjet(@RequestBody Employe employe){
 	        return employeservice.createChefProjet(employe);
 	    }
 
 	    @RequestMapping(method=RequestMethod.PUT,value="/employe")
-	    //@ApiParam(value="update employe")
 	    public void updateChefProjet(@RequestBody Employe employe) throws EmployeNotFoundException {
 	    	employeservice.updateChefProjet(employe);
 	    }
 
 	    @RequestMapping(method=RequestMethod.DELETE,value="/employe/{id_emp}")
-	    //@ApiParam(value="Delete employe")
 	    public void deleteChefProjet(@PathVariable long id_emp) throws EmployeNotFoundException {
 	    	employeservice.deleteChefProjet(id_emp);
 	    }

@@ -7,32 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name="employe")
 public class Employe {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name="id_emp")
-		//@ApiModelProperty(notes="unique id of the employe")
+		@ApiModelProperty(notes="unique id of the employe")
 		private long id_emp;
 		@Column(name="nom_emp")
-		//@ApiModelProperty(notes="last name of the employe")
+		@ApiModelProperty(notes="last name of the employe")
 		private String nom_emp;
 		@Column(name="prenom_emp")
-		//@ApiModelProperty(notes="name of the employe")
+		@ApiModelProperty(notes="name of the employe")
 		private String prenom_emp;
 		@Column(name="email_emp")
-		//@ApiModelProperty(notes="email of the employe")
+		@ApiModelProperty(notes="email of the employe")
 		private String email_emp;
 		@Column(name="password_emp")
-		//@ApiModelProperty(notes="password of the employe")
+		@ApiModelProperty(notes="password of the employe")
 		private String password_emp;
 		@Column(name="etat_emp")
-		//@ApiModelProperty(notes="state of the employe")
+		@ApiModelProperty(notes="state of the employe")
 		private String etat_emp;	
 		
 		@Column(name="id_chef_projet")
-		//@ApiModelProperty(notes="data of project lead of the employe")
+		@ApiModelProperty(notes="data of project lead of the employe")
 		private long id_chef_projet;
 		
 		public Employe() {
