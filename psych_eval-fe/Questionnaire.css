@@ -1,0 +1,15 @@
+.Questionnaire {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    height: 150px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: .25rem;
+    border-color: beige;
+  }
+  .Questionnaire:hover {
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  
+  }
