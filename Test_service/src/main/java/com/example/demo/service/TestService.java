@@ -16,13 +16,12 @@ import java.util.List;
 @Service
 
 public class TestService  {
-    @Autowired
-    private TestRepository testRepo;
+
     @Autowired
     private TestRepository dbFileRepository;
 
     public Test storeFile(MultipartFile file,long idChefProjet) {
-        // Normalize file name
+        // Normalize file getOriginalFilename
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 
 

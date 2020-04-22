@@ -43,7 +43,7 @@ public class TestController {
     }
 
     @PostMapping("/uploadMultipleFiles/{idchefProjet}")
-    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @PathVariable long idChefProjet) {
+    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @PathVariable("idchefProjet") long idChefProjet) {
         return Arrays.asList(files)
                 .stream()
                 .map(file -> uploadFile(file, idChefProjet))
@@ -51,7 +51,7 @@ public class TestController {
     }
 
     @GetMapping("/downloadFile/{fileId}")
-    public ResponseEntity<Resource> downloadFile(@PathVariable("idChefProjet") String fileId) {
+    public ResponseEntity<Resource> downloadFile(@PathVariable("fileId") String fileId) {
         // Load file from database
         Test dbFile = dbFileStorageService.getFile(fileId);
 
