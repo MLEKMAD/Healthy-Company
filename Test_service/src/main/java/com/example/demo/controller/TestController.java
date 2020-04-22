@@ -5,6 +5,8 @@ import com.example.demo.model.Test;
 import com.example.demo.payload.UploadFileResponse;
 import com.example.demo.service.TestService;
 
+import io.swagger.annotations.Api;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Api( value="file Api ",description= "API pour les opérations sur les fichiers que va envoye le chef de projet.")
 @RestController
 public class TestController {
 

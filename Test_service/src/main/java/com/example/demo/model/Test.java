@@ -3,18 +3,17 @@ package com.example.demo.model;
 
 import javax.persistence.*;
 
+//import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name="files")
 public class Test {
-    //@ApiModelProperty(notes="unique id of the project lead")
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_file")
     private String id_test;
-    //@ApiModelProperty(notes="last name of the project lead")
     @Column(name="name_file")
     private String test_name;
-    //@ApiModelProperty(notes="name of the project lead")
     @Column(name="content_file")
     private byte[] test_content;
     @Column(name = "id_chef_projet")
