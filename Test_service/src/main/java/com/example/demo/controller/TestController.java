@@ -7,8 +7,8 @@ import com.example.demo.service.TestService;
 
 import io.swagger.annotations.Api;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 @RestController
 public class TestController {
 
-    private static final Logger logger = LoggerFactory.getLogger(TestController.class);
+    //private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @Autowired
     private TestService dbFileStorageService;
