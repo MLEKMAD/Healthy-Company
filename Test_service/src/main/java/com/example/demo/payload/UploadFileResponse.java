@@ -8,7 +8,6 @@ public class UploadFileResponse {
     public UploadFileResponse(String fileName, String fileDownloadUri, long size) {
         this.fileName = fileName;
         this.fileDownloadUri = fileDownloadUri;
-
         this.size = size;
     }
 

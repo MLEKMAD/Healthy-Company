@@ -1,25 +1,21 @@
 package com.example.demo.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-import java.sql.Blob;
-import java.util.UUID;
 
 
 @Entity
-@Table(name="recommandation")
+@Table(name="files_recommandation")
 public class Recommandation {
     //@ApiModelProperty(notes="unique id of the project lead")
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_recommandation")
     private String id_rec;
     //@ApiModelProperty(notes="last name of the project lead")
-    @Column(name="rec_name")
+    @Column(name="name_recommandation")
     private String rec_name;
     //@ApiModelProperty(notes="name of the project lead")
-    @Column(name="rec_content")
+    @Column(name="content_recommandation")
     private byte[] rec_content;
     @Column(name = "id_chef_projet")
     private long id_chef_projet;
