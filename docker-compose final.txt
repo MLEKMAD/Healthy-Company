@@ -1,0 +1,56 @@
+version: "3.7"
+
+services:
+  # Frontend Service 
+   app-client:
+     build:
+       context: psych_eval-fe # Use an image built from the specified dockerfile in the `polling-app-client` directory.
+       dockerfile: Dockerfile
+     ports:
+      - "3000:3000" # Map the exposed port 80 on the container to port 9090 on the host machine
+     restart: always
+     depends_on:
+       - test-service
+       - User_service
+     networks:
+       - front-tier_network 
+      
+#Backend Services
+  test-service:
+      build:
+        context: ./Test_service
+        dockerfile: dockerfile.dockerfile
+      ports:
+        - "8084:8084"
+      networks:
+        - back-tier-network
+        - front-tier_network
+      depends_on:
+        - mysqldb-service
+  user-service:
+      build:
+        context: ./User_service
+        dockerfile: dockerfile.dockerfile
+      ports:
+        - "8083:8083"
+      networks:
+        - back-tier-network
+        - front-tier_network
+      depends_on:
+        - mysqldb-service
+  mysqldb-service:
+    image: mysql:latest
+    networks:
+      - back-tier-network
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=projet_jee
+     ports:
+      - "3306:3306"
+
+networks:
+  back-tier-network:
+    driver: bridge
+  front-tier_network:

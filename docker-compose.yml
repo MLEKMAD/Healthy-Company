@@ -1,0 +1,53 @@
+version: "3.7"
+
+services:      
+#Backend Services
+  test-service:
+      build:
+        context: ./Test_service
+        dockerfile: dockerfile.dockerfile
+      ports:
+        - "8084:8084"
+      environment:
+        - DATABASE_HOST=docker-mysql
+        - DATABASE_USER=root
+        - DATABASE_PASSWORD=
+        - DATABASE_NAME=projet_jee  
+        - DATABASE_PORT=3306
+      networks:
+        - back-tier-network
+      depends_on:
+        - mysqldb-service
+  user-service:
+      build:
+        context: ./User_service
+        dockerfile: dockerfile.dockerfile
+      ports:
+        - "8083:8083"
+      environment:
+        - DATABASE_HOST=docker-mysql
+        - DATABASE_USER=root
+        - DATABASE_PASSWORD=
+        - DATABASE_NAME=projet_jee  
+        - DATABASE_PORT=3306
+      networks:
+        - back-tier-network
+      depends_on:
+        - mysqldb-service
+
+  mysqldb-service:
+    image: mysql:latest
+    networks:
+      - back-tier-network
+    restart: always
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_DATABASE=projet_jee
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      - MYSQL_ONETIME_PASSWORD=true
+networks:
+  back-tier-network:
+    driver: bridge
