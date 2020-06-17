@@ -1,0 +1,12 @@
+.Header {
+  background-color: rgb(35, 131, 196);;
+  height: 190px;
+  padding: 20px;
+  font-size: xx-large;
+  font: bolder;
+      color: #fff;
+
+  }
+  .Header__name {
+    color: #fff;
+  }

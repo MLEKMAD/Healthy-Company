@@ -1,5 +1,5 @@
 import {SET_QUESTIONNAIRE_ID, SET_TYPING_VALUE, SEND_RECOMMENDATION} from "../constants/action-types";
-export const setActiveUserId =(id)=> ({
+export const setQuestionnaireId =(id)=> ({
     type :SET_QUESTIONNAIRE_ID,
     payload : id 
 })
@@ -10,7 +10,7 @@ export const setTypingValue =(value) => ({
 
 })
 
-export const sendMessage = (message, userId) =>({
+export const sendRecommendation = (message, userId) =>({
     type : SEND_RECOMMENDATION,
     payload : {
         userId,
