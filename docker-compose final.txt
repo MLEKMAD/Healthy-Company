@@ -50,6 +50,24 @@ services:
      ports:
       - "3306:3306"
 
+///////////////////////////
+  test-service:
+      build:
+        context: ./Test_service
+        dockerfile: dockerfile.dockerfile
+      ports:
+        - 8084:8084
+      environment:
+          - DATABASE_HOST=mysqldb-service
+          - DATABASE_USER=root
+          - DATABASE_PASSWORD=
+          - DATABASE_NAME=projet_jee
+          - DATABASE_PORT=3306
+      networks:
+        - healthy-company_back-tier-network
+      depends_on:
+        - mysqldb-service
+///////////////////////
 networks:
   back-tier-network:
     driver: bridge

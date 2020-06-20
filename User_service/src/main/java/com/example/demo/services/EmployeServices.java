@@ -43,20 +43,11 @@ public class EmployeServices {
 	public void deleteChefProjet(long id_emp)  {
 		employeRepo.deleteById(id_emp);
 	}
+	public Employe loadByEmailPassword(String email, String password) throws EmployeNotFoundException {
+		Employe employe = employeRepo.findByEmailPassword(email,password)
+				.orElseThrow(() -> new EmployeNotFoundException("User not found"));
+		return (Employe) employe;
+	}
 }
 
-/*
-public UserDetails loadByNamePassword(String name, String password) throws EmployeNotFoundException {
-    Objects.requireNonNull(name);
-    Objects.requireNonNull(password);
-    Employe employe = employeRepo.findByEmailPassword(name,password)
-    		.orElseThrow(() -> new EmployeNotFoundException("User not found"));
-    return (UserDetails) employe;
-}
 
-public UserDetails loadUserByUsername(String s) throws EmployeNotFoundException {
-    Objects.requireNonNull(s);
-    Employe employe = employeRepo.findByName(s).orElseThrow(() -> new EmployeNotFoundException("User not found"));
-    return (UserDetails) employe;
-}
-*/
