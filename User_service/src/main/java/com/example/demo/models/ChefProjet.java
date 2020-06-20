@@ -12,21 +12,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name="chef_projet")
 public class ChefProjet {
-	//@ApiModelProperty(notes="unique id of the project lead")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_chef_projet")
 	private long id_chef_projet;
-	//@ApiModelProperty(notes="last name of the project lead")
 	@Column(name="nom_chef_projet")
 	private String nom_chef_projet;
-	//@ApiModelProperty(notes="name of the project lead")
 	@Column(name="prenom_chef_projet")
 	private String prenom_chef_projet;
-	//@ApiModelProperty(notes="email of the project lead")
 	@Column(name="email_chef_projet")
 	private String email_chef_projet;
-	//@ApiModelProperty(notes="password of the project lead")
 	@Column(name="password_chef_projet")
 	private String password_chef_projet;
 	

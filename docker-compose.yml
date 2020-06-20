@@ -1,59 +1,63 @@
 version: "3.7"
 
 services:
-  # Frontend Service
-  app-client:
-    build:
-      context: ./psych_eval-fe
-      dockerfile: dockerfile.dockerfile
-    ports:
+# Frontend Service 
+   app-client:
+     build:
+       context: ./psych_eval-fe
+       dockerfile: Dockerfile
+     ports:
       - "3000:3000"
-    restart: always
-    depends_on:
-      - test-service
-      - user-service
-    networks:
-      - frontend-network
-  #Backend Services
+     restart: always
+     depends_on:
+       - test-service
+       - user_service
+     networks:
+       - frontend-network
+ #Backend Services
   mysql-service:
-    image: mysql
+    image: mysql:5.7
     ports:
       - "3306:3306"
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=kkk
+        MYSQL_ROOT_PASSWORD: password
+        MYSQL_DATABASE: projet_jee
+        MYSQL_USER: kkk
+        MYSQL_PASSWORD: password
     networks:
       - backend-network
+  
   test-service:
     build:
-      context: ./Test_service
-      dockerfile: dockerfile.dockerfile
+        context: ./Test_service
+        dockerfile: Dockerfile
     ports:
-      - "8084:8084"
+        - "8084:8084"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-service:3306/projet_jee?autoReconnect=true&useSSL=false
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD:
+        SPRING_DATASOURCE_URL: jdbc:mysql://mysql-service:3306/projet_jee
+        SPRING_DATASOURCE_USERNAME: kkk
+        SPRING_DATASOURCE_PASSWORD: password
     networks:
-      - backend-network
-      - frontend-network
+        - backend-network
+        - frontend-network
     depends_on:
-      - mysql-service
+        - mysql-service
   user-service:
     build:
-      context: ./User_service
-      dockerfile: dockerfile.dockerfile
+        context: ./User_service
+        dockerfile: Dockerfile
     ports:
-      - "8083:8083"
+        - "8083:8083"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-service:3306/projet_jee?autoReconnect=true&useSSL=false
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD:
+        SPRING_DATASOURCE_URL: jdbc:mysql://mysql-service:3306/projet_jee
+        SPRING_DATASOURCE_USERNAME: kkk
+        SPRING_DATASOURCE_PASSWORD: password
     networks:
-      - backend-network
-      - frontend-network
+        - backend-network
+        - frontend-network
     depends_on:
-      - mysql-service
+        - mysql-service
 networks:
   backend-network:
     driver: bridge

@@ -1,4 +1,5 @@
 FROM openjdk:12-jdk-alpine
 VOLUME /tmp
-ADD target/User_service.jar app.jar
+ADD target/demo.jar app.jar
+EXPOSE 8084
 ENTRYPOINT ["java","-jar","/app.jar"]

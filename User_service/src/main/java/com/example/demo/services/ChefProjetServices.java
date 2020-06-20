@@ -45,19 +45,11 @@ public class ChefProjetServices {
     public void deleteChefProjet(long id_chef_projet)  {
     	ChefProjetRepo.deleteById(id_chef_projet);
     }
-/*
-    public UserDetails loadByNamePassword(String name, String password) throws ChefProjetNotFoundException {
-        Objects.requireNonNull(name);
-        Objects.requireNonNull(password);
-        Employe employe = ChefProjetRepo.findByEmailPassword(name,password)
+
+    public ChefProjet loadByEmailPassword(String email, String password) throws ChefProjetNotFoundException {
+    	ChefProjet ChefProjet = ChefProjetRepo.findByEmailPassword(email,password)
         		.orElseThrow(() -> new ChefProjetNotFoundException("User not found"));
-        return (UserDetails) chefprojet;
+        return (ChefProjet) ChefProjet;
     }
 
-    public UserDetails loadUserByUsername(String s) throws ChefProjetNotFoundException {
-        Objects.requireNonNull(s);
-        ChefProjet chefprojet = ChefProjetRepo.findByName(s).orElseThrow(() -> new ChefProjetNotFoundException("User not found"));
-        return (UserDetails) chefprojet;
-    }
-*/
 }

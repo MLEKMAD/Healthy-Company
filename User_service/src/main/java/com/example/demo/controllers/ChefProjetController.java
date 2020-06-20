@@ -39,6 +39,10 @@ public class ChefProjetController {
 	    public ChefProjet createChefProjet(@RequestBody ChefProjet chefprojet){
 	        return chefprojetservice.createChefProjet(chefprojet);
 	    }
+	    @RequestMapping(method=RequestMethod.POST,value="/loginchefprojet")
+	    public ChefProjet loadByEmailPassword(@RequestBody String email,@RequestBody String password) throws ChefProjetNotFoundException{
+	        return chefprojetservice.loadByEmailPassword(email, password);
+	    }
 
 	    @RequestMapping(method=RequestMethod.PUT,value="/chefprojet")
 	    public void updateChefProjet(@RequestBody ChefProjet chefprojet) throws ChefProjetNotFoundException {
