@@ -1,53 +1,60 @@
 version: "3.7"
 
-services:      
-#Backend Services
-  test-service:
-      build:
-        context: ./Test_service
-        dockerfile: dockerfile.dockerfile
-      ports:
-        - "8084:8084"
-      environment:
-        - DATABASE_HOST=docker-mysql
-        - DATABASE_USER=root
-        - DATABASE_PASSWORD=
-        - DATABASE_NAME=projet_jee  
-        - DATABASE_PORT=3306
-      networks:
-        - back-tier-network
-      depends_on:
-        - mysqldb-service
-  user-service:
-      build:
-        context: ./User_service
-        dockerfile: dockerfile.dockerfile
-      ports:
-        - "8083:8083"
-      environment:
-        - DATABASE_HOST=docker-mysql
-        - DATABASE_USER=root
-        - DATABASE_PASSWORD=
-        - DATABASE_NAME=projet_jee  
-        - DATABASE_PORT=3306
-      networks:
-        - back-tier-network
-      depends_on:
-        - mysqldb-service
-
-  mysqldb-service:
-    image: mysql:latest
-    networks:
-      - back-tier-network
+services:
+  # Frontend Service
+  app-client:
+    build:
+      context: ./psych_eval-fe
+      dockerfile: dockerfile.dockerfile
+    ports:
+      - "3000:3000"
     restart: always
-    expose:
-      - "3306"
+    depends_on:
+      - test-service
+      - user-service
+    networks:
+      - frontend-network
+  #Backend Services
+  mysql-service:
+    image: mysql
+    ports:
+      - "3306:3306"
+    restart: always
     environment:
-      - MYSQL_DATABASE=projet_jee
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=
-      - MYSQL_ONETIME_PASSWORD=true
+      - MYSQL_ROOT_PASSWORD=kkk
+    networks:
+      - backend-network
+  test-service:
+    build:
+      context: ./Test_service
+      dockerfile: dockerfile.dockerfile
+    ports:
+      - "8084:8084"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-service:3306/projet_jee?autoReconnect=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+    networks:
+      - backend-network
+      - frontend-network
+    depends_on:
+      - mysql-service
+  user-service:
+    build:
+      context: ./User_service
+      dockerfile: dockerfile.dockerfile
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-service:3306/projet_jee?autoReconnect=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+    networks:
+      - backend-network
+      - frontend-network
+    depends_on:
+      - mysql-service
 networks:
-  back-tier-network:
+  backend-network:
     driver: bridge
+  frontend-network:

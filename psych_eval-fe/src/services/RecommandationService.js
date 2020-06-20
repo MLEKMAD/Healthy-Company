@@ -18,3 +18,4 @@ class RecommandationService {
 
 
 }
+export default RecommandationService;

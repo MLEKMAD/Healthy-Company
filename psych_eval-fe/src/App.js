@@ -6,6 +6,8 @@ import store from './store';
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import { SignUp } from './SignUp';
+import {SignIn} from './SignIn'
 
 
 
@@ -15,8 +17,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Main questionnaireId={questionnaireId} />
+      {/* <Main questionnaireId={questionnaireId} /> */}
+      <SignIn/>
     </div>    
   );
 }
