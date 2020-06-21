@@ -15,34 +15,25 @@ const userTypes = [
   { label: "employee", value: 0 },
   { label: "Project Manager", value: 1 },
 ];
-export class SignIn extends Component {
+export class MakeQuestionnaire extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fName: "",
-      lName: "",
-      email: "",
-      password: "",
-      type: null,
+      numberOfQuestions: 0,
+      questionnaire: {
+          title : "",
+          questions : []
+      },
+   
     };
   }
-  register() {
-    const employeeApi = new EmployeeService();
-    let employee = {
-      lName: this.state.lName,
-      fName: this.state.fName,
-      email: this.state.email,
-      password: this.state.password,
-      state: "initial",
-    };
-    employeeApi.getEmployee(employee).then((response) => {
-      console.log(response);
-    });
-  }
+
+   
+  
   render() {
     return (
       <div>
-        <h3> Sign In</h3>
+        <h3> Make a Questionnaire</h3>
       <div className="p-field p-grid">
       <label htmlFor="firstname3" className="p-col-fixed" style={{width:'100px'}}>Email</label>
       <div className="p-col">
@@ -78,4 +69,4 @@ export class SignIn extends Component {
     );
   }
 }
-export default SignIn;
+export default MakeQuestionnaire;

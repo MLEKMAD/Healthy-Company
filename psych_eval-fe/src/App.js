@@ -13,12 +13,12 @@ import {SignIn} from './SignIn'
 
 
 function App() {
-  const {  questionnaireId} = store.getState();
 
   return (
     <div className="App">
       {/* <Main questionnaireId={questionnaireId} /> */}
-      <SignIn/>
+      <Header />
+      <Main/>
     </div>    
   );
 }
