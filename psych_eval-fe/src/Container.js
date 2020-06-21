@@ -6,7 +6,7 @@ import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import ReactDOM from 'react-dom';
-
+import EmployeeService from './services/EmployeeService';
 import React, { useState, useEffect, useRef } from 'react';
 import {DataTable} from 'primereact/datatable';
 import {Column} from 'primereact/column';
@@ -29,27 +29,18 @@ const Container = () => {
     const [selectedStatus, setSelectedStatus] = useState(null);
     let dt = useRef(null);
 
-    const answers = [
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-        {name: "Amy Elsner", test: 'alzheimer test', date : '12-09-2020', status : "finished"},
-    ]
-
+    let [employees, setEmployees] = useState(null);
+    useEffect(() => {
+        const employeesApi = new EmployeeService();
+        let employees =[];
+        employees =  employeesApi.getAllEmployees();
+        setEmployees(employees);
+      });
 
     const renderHeader = () => {
         return (
             <div>
-                List of Customers
+                List of Employees
                 <div  className="p-datatable-globalfilter-container">
                     <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Global Search" />
                 </div>
@@ -115,13 +106,13 @@ const Container = () => {
 
     return (
         <div className="datatable-doc-demo">
-            <DataTable ref={dt} value={answers}
+            <DataTable ref={dt} value={employees}
                 header={header} responsive className="p-datatable-customers" dataKey="id" rowHover globalFilter={globalFilter}
                 selection={selectedCustomers} onSelectionChange={e => setSelectedCustomers(e.value)}
                 paginator rows={10} emptyMessage="No customers found" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                 paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" rowsPerPageOptions={[10,25,50]}>
                 <Column selectionMode="multiple" style={{width:'3em'}}/>
-                <Column field="name" header="Name" sortable filter filterPlaceholder="Search by name" />
+                <Column field="nom_emp" header="Name" sortable filter filterPlaceholder="Search by name" />
                 <Column field="test" header="test" sortable filter filterPlaceholder="Search by test" />
                 <Column field="status" header="status" sortable filter filterPlaceholder="Search by name" />
                 <Column field="date" header="Date" sortable filter filterMatchMode="custom" filterFunction={filterDate} filterElement={dateFilterEl} />

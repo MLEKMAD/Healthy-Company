@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import {setQuestionnaireId} from "./actions"
 import store from "./store"
 import {ToggleButton} from 'primereact/togglebutton';
@@ -6,12 +6,18 @@ import {InputTextarea} from 'primereact/inputtextarea';
 import {Fieldset} from 'primereact/fieldset';
 import {RadioButton} from 'primereact/radiobutton';
 import {SelectButton} from 'primereact/selectbutton';
+import TestsService from './services/TestsService';
 
 
 const Questionnaire = (/*{questionnaire}*/)=>{
 
 
+    useEffect(async () => {
+       
+     
 
+
+    })
     //const {title, questionnaire_id  } = questionnaire;
 
      const [title, setTitle] =useState( "Anger Management");
