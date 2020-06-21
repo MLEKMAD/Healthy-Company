@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
 @Table(name="employe")
 public class Employe {
 		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		@GeneratedValue(strategy = GenerationType.AUTO)
 		@Column(name="id_emp")
 		@ApiModelProperty(notes="unique id of the employe")
 		private long id_emp;
@@ -39,8 +39,7 @@ public class Employe {
 		public Employe() {
 			
 		}
-		public Employe(long id_emp,String nom_emp,String prenom_emp,String email_emp,String password_emp,String etat_emp,long id_chef_projet) {
-			this.id_emp=id_emp;
+		public Employe(String nom_emp,String prenom_emp,String email_emp,String password_emp,String etat_emp,long id_chef_projet) {
 			this.nom_emp=nom_emp;
 			this.prenom_emp=prenom_emp;
 			this.email_emp=email_emp;

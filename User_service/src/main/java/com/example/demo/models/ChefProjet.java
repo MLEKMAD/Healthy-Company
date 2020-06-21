@@ -31,8 +31,7 @@ public class ChefProjet {
 	
 
 	
-	public ChefProjet(long id_chef_projet, String nom_chef_projet, String prenom_chef_projet, String email_chef_projet,String password_chef_projet) {
-		this.id_chef_projet = id_chef_projet;
+	public ChefProjet(String nom_chef_projet, String prenom_chef_projet, String email_chef_projet,String password_chef_projet) {
 		this.nom_chef_projet = nom_chef_projet;
 		this.prenom_chef_projet = prenom_chef_projet;
 		this.email_chef_projet = email_chef_projet;
