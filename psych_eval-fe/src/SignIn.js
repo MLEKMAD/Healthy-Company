@@ -26,20 +26,13 @@ export class SignIn extends Component {
       type: null,
     };
   }
-  register() {
+   register(email,password) {
     const employeeApi = new EmployeeService();
-    let employee = {
-      lName: this.state.lName,
-      fName: this.state.fName,
-      email: this.state.email,
-      password: this.state.password,
-      state: "initial",
-    };
-    employeeApi.getEmployee(employee).then((response) => {
-      console.log(response);
-    });
-  }
+   employeeApi.loginEmployee(email,password).then(response=>{console.log(response)})
+    }
+  
   render() {
+    const {email,password} = this.state;
     return (
       <div>
         <h3> Sign In</h3>
@@ -48,7 +41,7 @@ export class SignIn extends Component {
       <div className="p-col">
           <InputText id="email" value={this.state.email}
                 onChange={(e) => {
-                  this.setState({ email: e.value });
+                  this.setState({ email: e.target.value });
                 }} type="text"/>
       </div>
   </div>
@@ -57,13 +50,13 @@ export class SignIn extends Component {
       <div className="p-col">
       <InputText id="password" value={this.state.password}
                 onChange={(e) => {
-                  this.setState({ password: e.value });
+                  this.setState({ password: e.target.value });console.log(this.state.password)
                 }} type="password"/>
 
       </div>
 
   </div>
-  <Button type="button" label="Log In"/>
+  <Button onClick={this.register(email,password)} type="button" label="Log In"/>
   <p>
            Create account? <Button id="btn1" className="p-button-raised p-button-rounded" label="Sign Up"></Button>
           </p>
