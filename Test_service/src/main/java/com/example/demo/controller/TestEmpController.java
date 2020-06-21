@@ -1,40 +1,38 @@
 package com.example.demo.controller;
 
-
-import com.example.demo.model.Test;
-import com.example.demo.payload.UploadFileResponse;
-import com.example.demo.service.TestService;
-
-import io.swagger.annotations.Api;
-
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
-//import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Api( value="file Api ",description= "API pour les opérations sur les fichiers que va envoye le chef de projet.")
-@RestController
-public class TestController {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.example.demo.model.TestEmp;
+import com.example.demo.payload.UploadFileResponse;
+import com.example.demo.service.TestEmpService;
+
+import io.swagger.annotations.Api;
+@Api( value="file employe Api ",description= "API pour les opérations sur les fichiers que va envoye le chef de projet.")
+@RestController
+public class TestEmpController {
     //private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @Autowired
-    private TestService dbFileStorageService;
+    private TestEmpService dbFileEmpStorageService;
 
-    @PostMapping("/uploadFile/{idChefProjet}")
+    @PostMapping("/uploadFileEmp/{idChefProjet}")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file,@PathVariable("idChefProjet") long idChefProjet) {
-        Test dbFile = dbFileStorageService.storeFile(file,idChefProjet);
+        TestEmp dbFile = dbFileEmpStorageService.storeFile(file,idChefProjet);
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
@@ -45,7 +43,7 @@ public class TestController {
                  file.getSize());
     }
 
-    @PostMapping("/uploadMultipleFiles/{idchefProjet}")
+    @PostMapping("/uploadMultipleFilesEmp/{idchefProjet}")
     public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @PathVariable("idchefProjet") long idChefProjet) {
         return Arrays.asList(files)
                 .stream()
@@ -53,24 +51,32 @@ public class TestController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/downloadFile/{fileId}")
+    @GetMapping("/downloadFileEmp/{fileId}")
     public ResponseEntity<Resource> downloadFile(@PathVariable("fileId") String fileId) {
         // Load file from database
-        Test dbFile = dbFileStorageService.getFile(fileId);
+        TestEmp dbFile = dbFileEmpStorageService.getFile(fileId);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getTest_name() + "\"")
+                .body(new ByteArrayResource(dbFile.getTest_content()));
+    }
+    @GetMapping("/downloadFileEmp/{id_emp}")
+    public ResponseEntity<Resource> downloadFileById(@PathVariable("id_emp") String id_emp) {
+        // Load file from database
+        TestEmp dbFile = dbFileEmpStorageService.getFileByid(id_emp);
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getTest_name() + "\"")
                 .body(new ByteArrayResource(dbFile.getTest_content()));
     }
     
-    @GetMapping("/downloadAllFile")
-    public ResponseEntity<Resource> downloadFile() {
+    @GetMapping("/downloadAllFileEmp")
+    public ResponseEntity<Resource> downloadAllFile() {
         // Load file from database
-        Test dbFile = dbFileStorageService.getAllFile();
+        TestEmp dbFile = dbFileEmpStorageService.getAllFile();
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getTest_name() + "\"")
                 .body(new ByteArrayResource(dbFile.getTest_content()));
     }
-
 }

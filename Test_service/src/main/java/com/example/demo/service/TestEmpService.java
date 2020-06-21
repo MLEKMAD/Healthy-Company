@@ -9,17 +9,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.exception.FileStorageException;
 import com.example.demo.exception.MyFileNotFoundException;
-import com.example.demo.model.Recommandation;
-import com.example.demo.model.Test;
-import com.example.demo.repository.TestRecRepository;
+import com.example.demo.model.TestEmp;
+import com.example.demo.repository.TestEmpRepository;
 
 @Service
-public class TestRecService {
-
+public class TestEmpService {
     @Autowired
-    private TestRecRepository dbFileRecRepository;
+    private TestEmpRepository dbFileEmpRepository;
 
-    public Recommandation storeFile(MultipartFile file , long idChefProjet) {
+    public TestEmp storeFile(MultipartFile file , long idChefProjet) {
         // Normalize file getOriginalFilename
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 
@@ -30,20 +28,25 @@ public class TestRecService {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
-            Recommandation dbFile = new Recommandation(fileName, file.getBytes(),idChefProjet);
+            TestEmp dbFile = new TestEmp(fileName, file.getBytes(),idChefProjet);
 
-            return dbFileRecRepository.save(dbFile);
+            return dbFileEmpRepository.save(dbFile);
         } catch (IOException ex) {
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
         }
     }
 
-    public Recommandation getFile(String fileId) {
-        return dbFileRecRepository.findById(fileId)
+    public TestEmp getFile(String fileId) {
+        return dbFileEmpRepository.findById(fileId)
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
     }
-    public Recommandation getAllFile() {
-        return dbFileRecRepository.findFileRec()
+    public TestEmp getFileByid(String id_emp) {
+        return dbFileEmpRepository.findByIdChefProjet(id_emp)
+                .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + id_emp));
+    }
+
+    public TestEmp getAllFile() {
+        return dbFileEmpRepository.findFileEmp()
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id "));
     }
     
