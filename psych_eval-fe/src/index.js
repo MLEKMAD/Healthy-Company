@@ -4,11 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './store'; 
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from "history";
+import Routes from "./routes"
 
+const history = createBrowserHistory();
 const render = () =>
 {
     fancyLog();
-    ReactDOM.render(<App />, document.getElementById('root'));
+    ReactDOM.render(
+      <Router  history={history}>
+    <App />
+    <Routes/>
+    </Router>
+    , document.getElementById('root'));
 };
 
 render();

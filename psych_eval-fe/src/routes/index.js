@@ -9,6 +9,7 @@ import store from "../store";
 import Container from "../Container";
 import UserRec from "../UserRec";
 import Questionnaire from "../Questionnaire";
+import User from "../User";
 
 export default class Routes extends React.Component {
   render() {
@@ -16,6 +17,9 @@ export default class Routes extends React.Component {
       <Switch>
         <Route exact path="/employees">
           <Container />
+        </Route>
+        <Route exact path="/User">
+          <User />
         </Route>
         <Route exact path="/">
           <SignUp />
@@ -29,10 +33,7 @@ export default class Routes extends React.Component {
         <Route path="/quest">
           <Questionnaire />
         </Route>
-        <Route path="/quest">
-        <Header/>
-          <Questionnaire />
-        </Route>
+        
       </Switch>
     );
   }
