@@ -1,19 +1,19 @@
 version: "3.7"
 
 services:
-# Frontend Service 
-   app-client:
-     build:
-       context: ./psych_eval-fe
-       dockerfile: Dockerfile
-     ports:
+ # Frontend Service 
+  app-client:
+    build:
+      context: ./psych_eval-fe
+      dockerfile: Dockerfile
+    ports:
       - "3000:3000"
-     restart: always
-     depends_on:
-       - test-service
-       - user_service
-     networks:
-       - frontend-network
+    restart: always
+    depends_on:
+      - test-service
+      - user-service
+    networks:
+      - frontend-network
  #Backend Services
   mysql-service:
     image: mysql:5.7

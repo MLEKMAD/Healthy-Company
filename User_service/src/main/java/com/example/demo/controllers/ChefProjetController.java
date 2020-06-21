@@ -40,7 +40,7 @@ public class ChefProjetController {
 	        return chefprojetservice.createChefProjet(chefprojet);
 	    }
 	    @RequestMapping(method=RequestMethod.POST,value="/loginchefprojet")
-	    public ChefProjet loadByEmailPassword(@RequestBody String email,@RequestBody String password) throws ChefProjetNotFoundException{
+	    public ChefProjet loadByEmailPassword(String email, String password) throws ChefProjetNotFoundException{
 	        return chefprojetservice.loadByEmailPassword(email, password);
 	    }
 
