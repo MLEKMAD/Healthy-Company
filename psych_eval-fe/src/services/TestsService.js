@@ -17,3 +17,4 @@ class TestsService {
         return await  this.myApi.get(`/downloadFile/${fileId}`)
     }
 }
+export default TestsService;

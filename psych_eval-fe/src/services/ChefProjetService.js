@@ -20,12 +20,13 @@ class ChefProjetService {
     return await this.myApi.get(`/chefprojet/all`);
   }
   async createChefProject(chefProjet) {
-    this.myApi.post("/chefprojet", chefProjet);
+    await this.myApi.post("/chefprojet", chefProjet);
   }
   async updateChefProject(chefProjet) {
-    this.myApi.put("/chefprojet", chefProjet);
+    await this.myApi.put("/chefprojet", chefProjet);
   }
   async deleteChefProject(chefProjet) {
-    this.myApi.delete(`/chefprojet/${chefProjet}`);
+    await this.myApi.delete(`/chefprojet/${chefProjet}`);
   }
 }
+export default ChefProjetService;

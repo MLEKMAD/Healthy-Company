@@ -38,6 +38,10 @@ public class EmployeController {
 	    public Employe createChefProjet(@RequestBody Employe employe){
 	        return employeservice.createChefProjet(employe);
 	    }
+	    @RequestMapping(method=RequestMethod.POST,value="/loginemploye")
+	    public Employe loadByEmailPassword(String email, String password) throws EmployeNotFoundException{
+	        return employeservice.loadByEmailPassword(email, password);
+	    }
 
 	    @RequestMapping(method=RequestMethod.PUT,value="/employe")
 	    public void updateChefProjet(@RequestBody Employe employe) throws EmployeNotFoundException {
