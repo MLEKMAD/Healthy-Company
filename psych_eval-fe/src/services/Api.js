@@ -5,6 +5,7 @@ const TIMEOUT = 60000;
 const HEADERS = {
     'Content-Type': 'application/json',
     Accept: 'application/json',
+    'Access-Control-Allow-Origin': '*',
 };
 
 class ApiService {
@@ -30,7 +31,7 @@ class ApiService {
     }
 
     get(path) {
-        return this.client.get(path).then(response => response.data);
+        return this.client.get(path,{mode:"cors"}).then(response => response.data);
     }
 
     post(path, payload) {

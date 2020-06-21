@@ -6,13 +6,14 @@ body {
     /* color: #333333; */
     /* -webkit-font-smoothing: antialiased; */
     /* -moz-osx-font-smoothing: grayscale; */
-    font-size: 24px;
+    /* font-size: 24px;
     margin-bottom: 40px;
     margin-top: 130px;
     background-color: rgb(12, 87, 58);
     
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    /* background-color: rgb(12, 87, 58); */
 }
 .center-demo {
     display: flex;
@@ -87,4 +88,17 @@ body {
     width: 260px;
     height: 50px;
     font-size: 25px;
+}
+.InputTextarea{
+    font-size: 25px;
+    width: 260px;
+    height: 80px;
+
+}
+/* .toolbar{
+    width:100cm;
+} */
+#up{
+    margin-right: 10px;
+ 
 }

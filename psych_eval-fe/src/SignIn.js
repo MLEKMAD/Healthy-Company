@@ -41,7 +41,7 @@ export class SignIn extends Component {
   }
   render() {
     return (
-      <div className="p-col p-col-align-end">
+      <div className=" p-col p-col-align-end ">
         <div className="ui-grid">
           <h1>Sign In</h1>
           <div className="p-inputgroup">

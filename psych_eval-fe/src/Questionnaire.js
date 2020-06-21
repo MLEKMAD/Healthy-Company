@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import {setQuestionnaireId} from "./actions"
 import store from "./store"
 import {ToggleButton} from 'primereact/togglebutton';
@@ -6,12 +6,23 @@ import {InputTextarea} from 'primereact/inputtextarea';
 import {Fieldset} from 'primereact/fieldset';
 import {RadioButton} from 'primereact/radiobutton';
 import {SelectButton} from 'primereact/selectbutton';
+import TestsService from './services/TestsService';
 
 
 const Questionnaire = (/*{questionnaire}*/)=>{
 
 
+    useEffect(async () => {
+       let api = new TestsService();
+       let myReader = new FileReader();
 
+       let blob = api.downloadFile(1);
+       
+      let text = await blob.text();
+      console.log(text)
+
+
+    })
     //const {title, questionnaire_id  } = questionnaire;
 
      const [title, setTitle] =useState( "Anger Management");
