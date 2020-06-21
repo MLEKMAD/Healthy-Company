@@ -20,7 +20,7 @@ const Questionnaire = (/*{questionnaire}*/)=>{
         "Take a chill pill maybe?",
         "Have you tried NOT beating your wife?"
     ]);
-    const [values,setValues] = useState(["Yes", "No", "Yes"]);
+    const [values,setValues] = useState([]);
     
     const [answersSoFar, setAnswersSoFar] =useState ([]);
     const options =[
@@ -30,14 +30,36 @@ const Questionnaire = (/*{questionnaire}*/)=>{
 
     const setAnswersSoFarfunc = (index, answer) => { 
         var key = index;
-        var obj = {};
-        obj[key] = answer;
+        var obj2 = {};
+        obj2[index]={
+            answer : "",
+            justification :""
+        }
+        obj2[key].answer = answer;
+        const i = answersSoFar.findIndex((e) => e.id === obj2.id);
+        if (i === -1){ 
+        answersSoFar.push(obj2);
+        }
+        else{
+            obj2[key].justification = answersSoFar[i][i].justification;
+
+            answersSoFar[index] = obj2;
+        }
+     }
+     const setJustificationsSoFarfunc = (index, just) => { 
+        var key = index;
+        var obj =  {};
+        obj[index]={
+            answer : "",
+            justification :""
+        }
+        obj[key].justification = just;
         const i = answersSoFar.findIndex((e) => e.id === obj.id);
         if (i === -1){ 
         answersSoFar.push(obj);
         }
         else{
-            answersSoFar[index] = obj;
+            answersSoFar[index][index].justification = just;
         }
      }
      const updateFieldChanged = (index,value) => {
@@ -68,7 +90,9 @@ const Questionnaire = (/*{questionnaire}*/)=>{
                   }}/>
                  </div>
 
-                <InputTextarea placeholder= "Justification"/>
+                <InputTextarea placeholder= "Justification" onChange = {(e)=> 
+                setJustificationsSoFarfunc(index, e.target.value)
+                }/>
             </div>
                  )
 

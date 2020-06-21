@@ -1,0 +1,64 @@
+body {
+    padding: .5em;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: normal;
+    color: #333333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+.center-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.p-col-d {
+    display: table-cell;
+}
+.p-col-m {
+    display: none;
+}
+@media screen and (max-width: 1024px) {
+    .p-col-d {
+        display: none;
+    }
+    .p-col-m {
+        display: inline-block;
+    }
+}
+
+.carousel-demo .p-carousel .p-carousel-content .p-carousel-item .car-details > .p-grid {
+    border: 1px solid #b3c2ca;
+    border-radius: 3px;
+    margin: 0.3em;
+    text-align: center;
+    padding: 2em 0 2.25em 0;
+    display: flex;
+}
+.carousel-demo .p-carousel .p-carousel-content .p-carousel-item .car-data .car-title {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 24px;
+}
+.carousel-demo .p-carousel .p-carousel-content .p-carousel-item .car-data .car-subtitle {
+    margin: 0.25em 0 2em 0;
+}
+.carousel-demo .p-carousel .p-carousel-content .p-carousel-item .car-data button {
+    margin-left: 0.5em;
+}
+.carousel-demo .p-carousel .p-carousel-content .p-carousel-item .car-data button:first-child {
+    margin-left: 0;
+}
+.carousel-demo .p-carousel.custom-carousel .p-carousel-dot-icon {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50%;
+}
+.carousel-demo .p-carousel.p-carousel-horizontal .p-carousel-content .p-carousel-item.p-carousel-item-start .car-details > .p-grid {
+    margin-left: 0.6em;
+}
+.carousel-demo .p-carousel.p-carousel-horizontal .p-carousel-content .p-carousel-item.p-carousel-item-end .car-details > .p-grid {
+    margin-right: 0.6em;
+}
+     

@@ -4,6 +4,8 @@ import Container from './Container'
 import Questionnaire from './Questionnaire'
 import QuestionnaireWindow from "./QuestionnaireWindow";
 import store from './store'
+import User from './User'
+import UserRec from './UserRec';
 
 const Main = ({questionnaireId}) =>{
     const { questionnaires} = store.getState();
@@ -12,7 +14,7 @@ const Main = ({questionnaireId}) =>{
         console.log(questionnaires);
 
         if(!questionnaireId){
-            return <Questionnaire q={questionnaires}/>;
+            return <UserRec/>;
         }
         else{
             return <QuestionnaireWindow activeUserId ={questionnaireId} />;
