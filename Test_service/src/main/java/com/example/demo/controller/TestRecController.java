@@ -64,5 +64,15 @@ public class TestRecController {
 	                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getRec_name() + "\"")
 	                .body(new ByteArrayResource(dbFile.getRec_content()));
 	    }
+	    
+	    @GetMapping("/downloadAllFileRec")
+	    public ResponseEntity<Resource> downloadAllFile() {
+	        // Load file from database
+	    	Recommandation dbFile = dbFileStorageService.getAllFile();
+
+	        return ResponseEntity.ok()
+	                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getRec_name() + "\"")
+	                .body(new ByteArrayResource(dbFile.getRec_content()));
+	    }
 
 }

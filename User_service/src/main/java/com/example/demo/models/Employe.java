@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
 @Table(name="employe")
 public class Employe {
 		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		@GeneratedValue(strategy = GenerationType.AUTO)
 		@Column(name="id_emp")
 		@ApiModelProperty(notes="unique id of the employe")
 		private long id_emp;
@@ -32,7 +32,6 @@ public class Employe {
 		@Column(name="etat_emp")
 		@ApiModelProperty(notes="state of the employe")
 		private String etat_emp;	
-		
 		@Column(name="id_chef_projet")
 		@ApiModelProperty(notes="data of project lead of the employe")
 		private long id_chef_projet;
@@ -40,34 +39,12 @@ public class Employe {
 		public Employe() {
 			
 		}
-		public Employe(long id_emp,String nom_emp,String prenom_emp,String email_emp,String password_emp,String etat_emp,long id_chef_projet) {
-			this.id_emp=id_emp;
-			this.setNom_emp(nom_emp);
-			this.setPrenom_emp(prenom_emp);
+		public Employe(String nom_emp,String prenom_emp,String email_emp,String password_emp,String etat_emp,long id_chef_projet) {
+			this.nom_emp=nom_emp;
+			this.prenom_emp=prenom_emp;
 			this.email_emp=email_emp;
 			this.password_emp=password_emp;	
 			this.id_chef_projet=id_chef_projet;
-		}
-		
-	   /* 
-	    public Collection<? extends GrantedAuthority> getAuthorities() {
-	        return null;
-	    }
-	*/
-	    
-	    public String getPassword() {
-	        return this.password_emp;
-	    }
-
-	    public String getUsername() {
-	        return this.email_emp;
-	    }
-
-		public String getEtat_emp() {
-			return etat_emp;
-		}
-		public void setEtat_emp(String etat_emp) {
-			this.etat_emp = etat_emp;
 		}
 		public String getNom_emp() {
 			return nom_emp;
@@ -81,5 +58,32 @@ public class Employe {
 		public void setPrenom_emp(String prenom_emp) {
 			this.prenom_emp = prenom_emp;
 		}
+		public String getEmail_emp() {
+			return email_emp;
+		}
+		public void setEmail_emp(String email_emp) {
+			this.email_emp = email_emp;
+		}
+		public String getPassword_emp() {
+			return password_emp;
+		}
+		public void setPassword_emp(String password_emp) {
+			this.password_emp = password_emp;
+		}
+		public String getEtat_emp() {
+			return etat_emp;
+		}
+		public void setEtat_emp(String etat_emp) {
+			this.etat_emp = etat_emp;
+		}
+		public long getId_chef_projet() {
+			return id_chef_projet;
+		}
+		public void setId_chef_projet(long id_chef_projet) {
+			this.id_chef_projet = id_chef_projet;
+		}
+		
+
+	    
 
 }

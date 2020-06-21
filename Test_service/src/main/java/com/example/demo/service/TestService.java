@@ -41,5 +41,9 @@ public class TestService  {
         return dbFileRepository.findById(fileId)
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
     }
-
+    public Test getAllFile() {
+        return dbFileRepository.findFile()
+                .orElseThrow(() -> new MyFileNotFoundException("File not found with id "));
+    }
+    
 }

@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.demo.exception.FileStorageException;
 import com.example.demo.exception.MyFileNotFoundException;
 import com.example.demo.model.Recommandation;
+import com.example.demo.model.Test;
 import com.example.demo.repository.TestRecRepository;
 
 @Service
@@ -41,4 +42,9 @@ public class TestRecService {
         return dbFileRecRepository.findById(fileId)
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
     }
+    public Recommandation getAllFile() {
+        return dbFileRecRepository.findFileRec()
+                .orElseThrow(() -> new MyFileNotFoundException("File not found with id "));
+    }
+    
 }

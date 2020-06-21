@@ -62,5 +62,15 @@ public class TestController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getTest_name() + "\"")
                 .body(new ByteArrayResource(dbFile.getTest_content()));
     }
+    
+    @GetMapping("/downloadAllFile")
+    public ResponseEntity<Resource> downloadFile() {
+        // Load file from database
+        Test dbFile = dbFileStorageService.getAllFile();
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getTest_name() + "\"")
+                .body(new ByteArrayResource(dbFile.getTest_content()));
+    }
 
 }
