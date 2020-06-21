@@ -1,0 +1,233 @@
+# Created at 2020-06-21T14:13:18.737
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+
+
+# Created at 2020-06-21T14:13:18.742
+Unexpected IOException: I,1,sun.desktop,windows
+
+
+# Created at 2020-06-21T14:13:18.743
+Unexpected IOException: I,1,awt.toolkit,sun.awt.windows.WToolkit
+
+
+# Created at 2020-06-21T14:13:18.744
+Unexpected IOException: I,1,java.specification.version,12
+
+
+# Created at 2020-06-21T14:13:18.745
+Unexpected IOException: I,1,sun.cpu.isalist,amd64
+
+
+# Created at 2020-06-21T14:13:18.746
+Unexpected IOException: I,1,sun.jnu.encoding,Cp1252
+
+
+# Created at 2020-06-21T14:13:18.750
+Unexpected IOException: I,1,java.class.path,C:\005CUsers\005CHatim\005CDesktop\005CHealthy-Company-master\005CHealthy-Company\005CUser_service\005Ctarget\005Ctest-classes;C:\005CUsers\005CHatim\005CDesktop\005CHealthy-Company-master\005CHealthy-Company\005CUser_service\005Ctarget\005Cclasses;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-data-jpa\005C2.2.6.RELEASE\005Cspring-boot-starter-data-jpa-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-aop\005C2.2.6.RELEASE\005Cspring-boot-starter-aop-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-aop\005C5.2.5.RELEASE\005Cspring-aop-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Caspectj\005Caspectjweaver\005C1.9.5\005Caspectjweaver-1.9.5.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-jdbc\005C2.2.6.RELEASE\005Cspring-boot-starter-jdbc-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Czaxxer\005CHikariCP\005C3.4.2\005CHikariCP-3.4.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-jdbc\005C5.2.5.RELEASE\005Cspring-jdbc-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cactivation\005Cjakarta.activation-api\005C1.2.2\005Cjakarta.activation-api-1.2.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cpersistence\005Cjakarta.persistence-api\005C2.2.3\005Cjakarta.persistence-api-2.2.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Ctransaction\005Cjakarta.transaction-api\005C1.3.3\005Cjakarta.transaction-api-1.3.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Chibernate\005Chibernate-core\005C5.4.12.Final\005Chibernate-core-5.4.12.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjboss\005Clogging\005Cjboss-logging\005C3.4.1.Final\005Cjboss-logging-3.4.1.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjavassist\005Cjavassist\005C3.24.0-GA\005Cjavassist-3.24.0-GA.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cnet\005Cbytebuddy\005Cbyte-buddy\005C1.10.8\005Cbyte-buddy-1.10.8.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cantlr\005Cantlr\005C2.7.7\005Cantlr-2.7.7.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjboss\005Cjandex\005C2.1.1.Final\005Cjandex-2.1.1.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cdom4j\005Cdom4j\005C2.1.1\005Cdom4j-2.1.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Chibernate\005Ccommon\005Chibernate-commons-annotations\005C5.1.0.Final\005Chibernate-commons-annotations-5.1.0.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cglassfish\005Cjaxb\005Cjaxb-runtime\005C2.3.2\005Cjaxb-runtime-2.3.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cglassfish\005Cjaxb\005Ctxw2\005C2.3.2\005Ctxw2-2.3.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Csun\005Cistack\005Cistack-commons-runtime\005C3.0.8\005Cistack-commons-runtime-3.0.8.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjvnet\005Cstaxex\005Cstax-ex\005C1.8.1\005Cstax-ex-1.8.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Csun\005Cxml\005Cfastinfoset\005CFastInfoset\005C1.2.16\005CFastInfoset-1.2.16.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cdata\005Cspring-data-jpa\005C2.2.6.RELEASE\005Cspring-data-jpa-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cdata\005Cspring-data-commons\005C2.2.6.RELEASE\005Cspring-data-commons-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-orm\005C5.2.5.RELEASE\005Cspring-orm-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-context\005C5.2.5.RELEASE\005Cspring-context-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-tx\005C5.2.5.RELEASE\005Cspring-tx-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-beans\005C5.2.5.RELEASE\005Cspring-beans-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-aspects\005C5.2.5.RELEASE\005Cspring-aspects-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-web\005C2.2.6.RELEASE\005Cspring-boot-starter-web-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter\005C2.2.6.RELEASE\005Cspring-boot-starter-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot\005C2.2.6.RELEASE\005Cspring-boot-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-autoconfigure\005C2.2.6.RELEASE\005Cspring-boot-autoconfigure-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-logging\005C2.2.6.RELEASE\005Cspring-boot-starter-logging-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cch\005Cqos\005Clogback\005Clogback-classic\005C1.2.3\005Clogback-classic-1.2.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cch\005Cqos\005Clogback\005Clogback-core\005C1.2.3\005Clogback-core-1.2.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Clogging\005Clog4j\005Clog4j-to-slf4j\005C2.12.1\005Clog4j-to-slf4j-2.12.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Clogging\005Clog4j\005Clog4j-api\005C2.12.1\005Clog4j-api-2.12.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cslf4j\005Cjul-to-slf4j\005C1.7.30\005Cjul-to-slf4j-1.7.30.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cannotation\005Cjakarta.annotation-api\005C1.3.5\005Cjakarta.annotation-api-1.3.5.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cyaml\005Csnakeyaml\005C1.25\005Csnakeyaml-1.25.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-json\005C2.2.6.RELEASE\005Cspring-boot-starter-json-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Ccore\005Cjackson-databind\005C2.10.3\005Cjackson-databind-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Ccore\005Cjackson-core\005C2.10.3\005Cjackson-core-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Cdatatype\005Cjackson-datatype-jdk8\005C2.10.3\005Cjackson-datatype-jdk8-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Cdatatype\005Cjackson-datatype-jsr310\005C2.10.3\005Cjackson-datatype-jsr310-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Cmodule\005Cjackson-module-parameter-names\005C2.10.3\005Cjackson-module-parameter-names-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-tomcat\005C2.2.6.RELEASE\005Cspring-boot-starter-tomcat-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Ctomcat\005Cembed\005Ctomcat-embed-core\005C9.0.33\005Ctomcat-embed-core-9.0.33.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Ctomcat\005Cembed\005Ctomcat-embed-el\005C9.0.33\005Ctomcat-embed-el-9.0.33.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Ctomcat\005Cembed\005Ctomcat-embed-websocket\005C9.0.33\005Ctomcat-embed-websocket-9.0.33.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-validation\005C2.2.6.RELEASE\005Cspring-boot-starter-validation-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cvalidation\005Cjakarta.validation-api\005C2.0.2\005Cjakarta.validation-api-2.0.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Chibernate\005Cvalidator\005Chibernate-validator\005C6.0.18.Final\005Chibernate-validator-6.0.18.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-web\005C5.2.5.RELEASE\005Cspring-web-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-webmvc\005C5.2.5.RELEASE\005Cspring-webmvc-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-expression\005C5.2.5.RELEASE\005Cspring-expression-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cmysql\005Cmysql-connector-java\005C8.0.19\005Cmysql-connector-java-8.0.19.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-test\005C2.2.6.RELEASE\005Cspring-boot-starter-test-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-test\005C2.2.6.RELEASE\005Cspring-boot-test-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-test-autoconfigure\005C2.2.6.RELEASE\005Cspring-boot-test-autoconfigure-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cjayway\005Cjsonpath\005Cjson-path\005C2.4.0\005Cjson-path-2.4.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cnet\005Cminidev\005Cjson-smart\005C2.3\005Cjson-smart-2.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cnet\005Cminidev\005Caccessors-smart\005C1.2\005Caccessors-smart-1.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cow2\005Casm\005Casm\005C5.0.4\005Casm-5.0.4.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cxml\005Cbind\005Cjakarta.xml.bind-api\005C2.3.3\005Cjakarta.xml.bind-api-2.3.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter\005C5.5.2\005Cjunit-jupiter-5.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-api\005C5.5.2\005Cjunit-jupiter-api-5.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capiguardian\005Capiguardian-api\005C1.1.0\005Capiguardian-api-1.1.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Copentest4j\005Copentest4j\005C1.2.0\005Copentest4j-1.2.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cplatform\005Cjunit-platform-commons\005C1.5.2\005Cjunit-platform-commons-1.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-params\005C5.5.2\005Cjunit-jupiter-params-5.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-engine\005C5.5.2\005Cjunit-jupiter-engine-5.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cplatform\005Cjunit-platform-engine\005C1.5.2\005Cjunit-platform-engine-1.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cmockito\005Cmockito-junit-jupiter\005C3.1.0\005Cmockito-junit-jupiter-3.1.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cassertj\005Cassertj-core\005C3.13.2\005Cassertj-core-3.13.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest\005C2.1\005Chamcrest-2.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cmockito\005Cmockito-core\005C3.1.0\005Cmockito-core-3.1.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cnet\005Cbytebuddy\005Cbyte-buddy-agent\005C1.10.8\005Cbyte-buddy-agent-1.10.8.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cobjenesis\005Cobjenesis\005C2.6\005Cobjenesis-2.6.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cskyscreamer\005Cjsonassert\005C1.5.0\005Cjsonassert-1.5.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cvaadin\005Cexternal\005Cgoogle\005Candroid-json\005C0.0.20131108.vaadin1\005Candroid-json-0.0.20131108.vaadin1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-core\005C5.2.5.RELEASE\005Cspring-core-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-jcl\005C5.2.5.RELEASE\005Cspring-jcl-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-test\005C5.2.5.RELEASE\005Cspring-test-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cxmlunit\005Cxmlunit-core\005C2.6.4\005Cxmlunit-core-2.6.4.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-swagger2\005C2.9.2\005Cspringfox-swagger2-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cswagger\005Cswagger-annotations\005C1.5.20\005Cswagger-annotations-1.5.20.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cswagger\005Cswagger-models\005C1.5.20\005Cswagger-models-1.5.20.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Ccore\005Cjackson-annotations\005C2.10.3\005Cjackson-annotations-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-spi\005C2.9.2\005Cspringfox-spi-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-core\005C2.9.2\005Cspringfox-core-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-schema\005C2.9.2\005Cspringfox-schema-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-swagger-common\005C2.9.2\005Cspringfox-swagger-common-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-spring-web\005C2.9.2\005Cspringfox-spring-web-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cguava\005Cguava\005C20.0\005Cguava-20.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cclassmate\005C1.5.1\005Cclassmate-1.5.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cslf4j\005Cslf4j-api\005C1.7.30\005Cslf4j-api-1.7.30.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cplugin\005Cspring-plugin-core\005C1.2.0.RELEASE\005Cspring-plugin-core-1.2.0.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cplugin\005Cspring-plugin-metadata\005C1.2.0.RELEASE\005Cspring-plugin-metadata-1.2.0.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cmapstruct\005Cmapstruct\005C1.2.0.Final\005Cmapstruct-1.2.0.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-swagger-ui\005C2.9.2\005Cspringfox-swagger-ui-2.9.2.jar;
+
+
+# Created at 2020-06-21T14:13:18.752
+Unexpected IOException: I,1,java.vm.vendor,Oracle Corporation
+
+
+# Created at 2020-06-21T14:13:18.753
+Unexpected IOException: I,1,sun.arch.data.model,64
+
+
+# Created at 2020-06-21T14:13:18.754
+Unexpected IOException: I,1,user.variant,
+
+
+# Created at 2020-06-21T14:13:18.754
+Unexpected IOException: I,1,java.vendor.url,https://java.oracle.com/
+
+
+# Created at 2020-06-21T14:13:18.755
+Unexpected IOException: I,1,user.timezone,Africa/Casablanca
+
+
+# Created at 2020-06-21T14:13:18.756
+Unexpected IOException: I,1,java.vm.specification.version,12
+
+
+# Created at 2020-06-21T14:13:18.757
+Unexpected IOException: I,1,os.name,Windows 10
+
+
+# Created at 2020-06-21T14:13:18.757
+Unexpected IOException: I,1,sun.java.launcher,SUN_STANDARD
+
+
+# Created at 2020-06-21T14:13:18.758
+Unexpected IOException: I,1,user.country,GB
+
+
+# Created at 2020-06-21T14:13:18.759
+Unexpected IOException: I,1,sun.boot.library.path,C:\005CProgram Files\005CJava\005Cjdk-12.0.2\005Cbin
+
+
+# Created at 2020-06-21T14:13:18.760
+Unexpected IOException: I,1,sun.java.command,C:\005CUsers\005CHatim\005CAppData\005CLocal\005CTemp\005Csurefire13321611222365310215\005Csurefirebooter11819884190342848042.jar C:\005CUsers\005CHatim\005CAppData\005CLocal\005CTemp\005Csurefire13321611222365310215 2020-06-21T14-13-18_100-jvmRun1 surefire15691491026139604235tmp surefire_08098908666691948287tmp
+
+
+# Created at 2020-06-21T14:13:18.761
+Unexpected IOException: I,1,jdk.debug,release
+
+
+# Created at 2020-06-21T14:13:18.765
+Unexpected IOException: I,1,surefire.test.class.path,C:\005CUsers\005CHatim\005CDesktop\005CHealthy-Company-master\005CHealthy-Company\005CUser_service\005Ctarget\005Ctest-classes;C:\005CUsers\005CHatim\005CDesktop\005CHealthy-Company-master\005CHealthy-Company\005CUser_service\005Ctarget\005Cclasses;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-data-jpa\005C2.2.6.RELEASE\005Cspring-boot-starter-data-jpa-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-aop\005C2.2.6.RELEASE\005Cspring-boot-starter-aop-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-aop\005C5.2.5.RELEASE\005Cspring-aop-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Caspectj\005Caspectjweaver\005C1.9.5\005Caspectjweaver-1.9.5.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-jdbc\005C2.2.6.RELEASE\005Cspring-boot-starter-jdbc-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Czaxxer\005CHikariCP\005C3.4.2\005CHikariCP-3.4.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-jdbc\005C5.2.5.RELEASE\005Cspring-jdbc-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cactivation\005Cjakarta.activation-api\005C1.2.2\005Cjakarta.activation-api-1.2.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cpersistence\005Cjakarta.persistence-api\005C2.2.3\005Cjakarta.persistence-api-2.2.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Ctransaction\005Cjakarta.transaction-api\005C1.3.3\005Cjakarta.transaction-api-1.3.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Chibernate\005Chibernate-core\005C5.4.12.Final\005Chibernate-core-5.4.12.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjboss\005Clogging\005Cjboss-logging\005C3.4.1.Final\005Cjboss-logging-3.4.1.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjavassist\005Cjavassist\005C3.24.0-GA\005Cjavassist-3.24.0-GA.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cnet\005Cbytebuddy\005Cbyte-buddy\005C1.10.8\005Cbyte-buddy-1.10.8.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cantlr\005Cantlr\005C2.7.7\005Cantlr-2.7.7.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjboss\005Cjandex\005C2.1.1.Final\005Cjandex-2.1.1.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cdom4j\005Cdom4j\005C2.1.1\005Cdom4j-2.1.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Chibernate\005Ccommon\005Chibernate-commons-annotations\005C5.1.0.Final\005Chibernate-commons-annotations-5.1.0.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cglassfish\005Cjaxb\005Cjaxb-runtime\005C2.3.2\005Cjaxb-runtime-2.3.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cglassfish\005Cjaxb\005Ctxw2\005C2.3.2\005Ctxw2-2.3.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Csun\005Cistack\005Cistack-commons-runtime\005C3.0.8\005Cistack-commons-runtime-3.0.8.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjvnet\005Cstaxex\005Cstax-ex\005C1.8.1\005Cstax-ex-1.8.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Csun\005Cxml\005Cfastinfoset\005CFastInfoset\005C1.2.16\005CFastInfoset-1.2.16.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cdata\005Cspring-data-jpa\005C2.2.6.RELEASE\005Cspring-data-jpa-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cdata\005Cspring-data-commons\005C2.2.6.RELEASE\005Cspring-data-commons-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-orm\005C5.2.5.RELEASE\005Cspring-orm-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-context\005C5.2.5.RELEASE\005Cspring-context-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-tx\005C5.2.5.RELEASE\005Cspring-tx-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-beans\005C5.2.5.RELEASE\005Cspring-beans-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-aspects\005C5.2.5.RELEASE\005Cspring-aspects-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-web\005C2.2.6.RELEASE\005Cspring-boot-starter-web-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter\005C2.2.6.RELEASE\005Cspring-boot-starter-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot\005C2.2.6.RELEASE\005Cspring-boot-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-autoconfigure\005C2.2.6.RELEASE\005Cspring-boot-autoconfigure-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-logging\005C2.2.6.RELEASE\005Cspring-boot-starter-logging-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cch\005Cqos\005Clogback\005Clogback-classic\005C1.2.3\005Clogback-classic-1.2.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cch\005Cqos\005Clogback\005Clogback-core\005C1.2.3\005Clogback-core-1.2.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Clogging\005Clog4j\005Clog4j-to-slf4j\005C2.12.1\005Clog4j-to-slf4j-2.12.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Clogging\005Clog4j\005Clog4j-api\005C2.12.1\005Clog4j-api-2.12.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cslf4j\005Cjul-to-slf4j\005C1.7.30\005Cjul-to-slf4j-1.7.30.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cannotation\005Cjakarta.annotation-api\005C1.3.5\005Cjakarta.annotation-api-1.3.5.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cyaml\005Csnakeyaml\005C1.25\005Csnakeyaml-1.25.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-json\005C2.2.6.RELEASE\005Cspring-boot-starter-json-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Ccore\005Cjackson-databind\005C2.10.3\005Cjackson-databind-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Ccore\005Cjackson-core\005C2.10.3\005Cjackson-core-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Cdatatype\005Cjackson-datatype-jdk8\005C2.10.3\005Cjackson-datatype-jdk8-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Cdatatype\005Cjackson-datatype-jsr310\005C2.10.3\005Cjackson-datatype-jsr310-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Cmodule\005Cjackson-module-parameter-names\005C2.10.3\005Cjackson-module-parameter-names-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-tomcat\005C2.2.6.RELEASE\005Cspring-boot-starter-tomcat-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Ctomcat\005Cembed\005Ctomcat-embed-core\005C9.0.33\005Ctomcat-embed-core-9.0.33.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Ctomcat\005Cembed\005Ctomcat-embed-el\005C9.0.33\005Ctomcat-embed-el-9.0.33.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capache\005Ctomcat\005Cembed\005Ctomcat-embed-websocket\005C9.0.33\005Ctomcat-embed-websocket-9.0.33.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-validation\005C2.2.6.RELEASE\005Cspring-boot-starter-validation-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cvalidation\005Cjakarta.validation-api\005C2.0.2\005Cjakarta.validation-api-2.0.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Chibernate\005Cvalidator\005Chibernate-validator\005C6.0.18.Final\005Chibernate-validator-6.0.18.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-web\005C5.2.5.RELEASE\005Cspring-web-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-webmvc\005C5.2.5.RELEASE\005Cspring-webmvc-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-expression\005C5.2.5.RELEASE\005Cspring-expression-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cmysql\005Cmysql-connector-java\005C8.0.19\005Cmysql-connector-java-8.0.19.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-starter-test\005C2.2.6.RELEASE\005Cspring-boot-starter-test-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-test\005C2.2.6.RELEASE\005Cspring-boot-test-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cboot\005Cspring-boot-test-autoconfigure\005C2.2.6.RELEASE\005Cspring-boot-test-autoconfigure-2.2.6.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cjayway\005Cjsonpath\005Cjson-path\005C2.4.0\005Cjson-path-2.4.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cnet\005Cminidev\005Cjson-smart\005C2.3\005Cjson-smart-2.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cnet\005Cminidev\005Caccessors-smart\005C1.2\005Caccessors-smart-1.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cow2\005Casm\005Casm\005C5.0.4\005Casm-5.0.4.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cjakarta\005Cxml\005Cbind\005Cjakarta.xml.bind-api\005C2.3.3\005Cjakarta.xml.bind-api-2.3.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter\005C5.5.2\005Cjunit-jupiter-5.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-api\005C5.5.2\005Cjunit-jupiter-api-5.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Capiguardian\005Capiguardian-api\005C1.1.0\005Capiguardian-api-1.1.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Copentest4j\005Copentest4j\005C1.2.0\005Copentest4j-1.2.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cplatform\005Cjunit-platform-commons\005C1.5.2\005Cjunit-platform-commons-1.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-params\005C5.5.2\005Cjunit-jupiter-params-5.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-engine\005C5.5.2\005Cjunit-jupiter-engine-5.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cjunit\005Cplatform\005Cjunit-platform-engine\005C1.5.2\005Cjunit-platform-engine-1.5.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cmockito\005Cmockito-junit-jupiter\005C3.1.0\005Cmockito-junit-jupiter-3.1.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cassertj\005Cassertj-core\005C3.13.2\005Cassertj-core-3.13.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest\005C2.1\005Chamcrest-2.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cmockito\005Cmockito-core\005C3.1.0\005Cmockito-core-3.1.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cnet\005Cbytebuddy\005Cbyte-buddy-agent\005C1.10.8\005Cbyte-buddy-agent-1.10.8.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cobjenesis\005Cobjenesis\005C2.6\005Cobjenesis-2.6.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cskyscreamer\005Cjsonassert\005C1.5.0\005Cjsonassert-1.5.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cvaadin\005Cexternal\005Cgoogle\005Candroid-json\005C0.0.20131108.vaadin1\005Candroid-json-0.0.20131108.vaadin1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-core\005C5.2.5.RELEASE\005Cspring-core-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-jcl\005C5.2.5.RELEASE\005Cspring-jcl-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-test\005C5.2.5.RELEASE\005Cspring-test-5.2.5.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cxmlunit\005Cxmlunit-core\005C2.6.4\005Cxmlunit-core-2.6.4.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-swagger2\005C2.9.2\005Cspringfox-swagger2-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cswagger\005Cswagger-annotations\005C1.5.20\005Cswagger-annotations-1.5.20.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cswagger\005Cswagger-models\005C1.5.20\005Cswagger-models-1.5.20.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cjackson\005Ccore\005Cjackson-annotations\005C2.10.3\005Cjackson-annotations-2.10.3.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-spi\005C2.9.2\005Cspringfox-spi-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-core\005C2.9.2\005Cspringfox-core-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-schema\005C2.9.2\005Cspringfox-schema-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-swagger-common\005C2.9.2\005Cspringfox-swagger-common-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-spring-web\005C2.9.2\005Cspringfox-spring-web-2.9.2.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cguava\005Cguava\005C20.0\005Cguava-20.0.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Ccom\005Cfasterxml\005Cclassmate\005C1.5.1\005Cclassmate-1.5.1.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cslf4j\005Cslf4j-api\005C1.7.30\005Cslf4j-api-1.7.30.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cplugin\005Cspring-plugin-core\005C1.2.0.RELEASE\005Cspring-plugin-core-1.2.0.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cspringframework\005Cplugin\005Cspring-plugin-metadata\005C1.2.0.RELEASE\005Cspring-plugin-metadata-1.2.0.RELEASE.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Corg\005Cmapstruct\005Cmapstruct\005C1.2.0.Final\005Cmapstruct-1.2.0.Final.jar;C:\005CUsers\005CHatim\005C.m2\005Crepository\005Cio\005Cspringfox\005Cspringfox-swagger-ui\005C2.9.2\005Cspringfox-swagger-ui-2.9.2.jar;
+
+
+# Created at 2020-06-21T14:13:18.766
+Unexpected IOException: I,1,sun.cpu.endian,little
+
+
+# Created at 2020-06-21T14:13:18.767
+Unexpected IOException: I,1,user.home,C:\005CUsers\005CHatim
+
+
+# Created at 2020-06-21T14:13:18.767
+Unexpected IOException: I,1,user.language,en
+
+
+# Created at 2020-06-21T14:13:18.768
+Unexpected IOException: I,1,java.specification.vendor,Oracle Corporation
+
+
+# Created at 2020-06-21T14:13:18.769
+Unexpected IOException: I,1,java.version.date,2019-07-16
+
+
+# Created at 2020-06-21T14:13:18.769
+Unexpected IOException: I,1,java.home,C:\005CProgram Files\005CJava\005Cjdk-12.0.2
+
+
+# Created at 2020-06-21T14:13:18.770
+Unexpected IOException: I,1,file.separator,\005C
+
+
+# Created at 2020-06-21T14:13:18.770
+Unexpected IOException: I,1,basedir,C:\005CUsers\005CHatim\005CDesktop\005CHealthy-Company-master\005CHealthy-Company\005CUser_service
+
+
+# Created at 2020-06-21T14:13:18.771
+Unexpected IOException: I,1,java.vm.compressedOopsMode,Zero based
+
+
+# Created at 2020-06-21T14:13:18.772
+Unexpected IOException: I,1,line.separator,\000D\000A
+
+
+# Created at 2020-06-21T14:13:18.772
+Unexpected IOException: I,1,java.vm.specification.vendor,Oracle Corporation
+
+
+# Created at 2020-06-21T14:13:18.773
+Unexpected IOException: I,1,java.specification.name,Java Platform API Specification
+
+
+# Created at 2020-06-21T14:13:18.774
+Unexpected IOException: I,1,java.awt.graphicsenv,sun.awt.Win32GraphicsEnvironment
+
+
+# Created at 2020-06-21T14:13:18.775
+Unexpected IOException: I,1,surefire.real.class.path,C:\005CUsers\005CHatim\005CAppData\005CLocal\005CTemp\005Csurefire13321611222365310215\005Csurefirebooter11819884190342848042.jar
+
+
+# Created at 2020-06-21T14:13:18.775
+Unexpected IOException: I,1,user.script,
+
+
+# Created at 2020-06-21T14:13:18.776
+Unexpected IOException: I,1,sun.management.compiler,HotSpot 64-Bit Tiered Compilers
+
+
+# Created at 2020-06-21T14:13:18.777
+Unexpected IOException: I,1,java.runtime.version,12.0.2+10
+
+
+# Created at 2020-06-21T14:13:18.778
+Unexpected IOException: I,1,user.name,Hatim
+
+
+# Created at 2020-06-21T14:13:18.778
+Unexpected IOException: I,1,path.separator,;
+
+
+# Created at 2020-06-21T14:13:18.779
+Unexpected IOException: I,1,os.version,10.0
+
+
+# Created at 2020-06-21T14:13:18.780
+Unexpected IOException: I,1,java.runtime.name,Java(TM) SE Runtime Environment
+
+
+# Created at 2020-06-21T14:13:18.781
+Unexpected IOException: I,1,file.encoding,Cp1252
+
+
+# Created at 2020-06-21T14:13:18.782
+Unexpected IOException: I,1,java.vm.name,Java HotSpot(TM) 64-Bit Server VM
+
+
+# Created at 2020-06-21T14:13:18.783
+Unexpected IOException: I,1,localRepository,C:\005CUsers\005CHatim\005C.m2\005Crepository
+
+
+# Created at 2020-06-21T14:13:18.784
+Unexpected IOException: I,1,java.vendor.url.bug,https://bugreport.java.com/bugreport/
+
+
+# Created at 2020-06-21T14:13:18.784
+Unexpected IOException: I,1,java.io.tmpdir,C:\005CUsers\005CHatim\005CAppData\005CLocal\005CTemp\005C
+
+
+# Created at 2020-06-21T14:13:18.785
+Unexpected IOException: I,1,java.version,12.0.2
+
+
+# Created at 2020-06-21T14:13:18.786
+Unexpected IOException: I,1,user.dir,C:\005CUsers\005CHatim\005CDesktop\005CHealthy-Company-master\005CHealthy-Company\005CUser_service
+
+
+# Created at 2020-06-21T14:13:18.787
+Unexpected IOException: I,1,os.arch,amd64
+
+
+# Created at 2020-06-21T14:13:18.788
+Unexpected IOException: I,1,java.vm.specification.name,Java Virtual Machine Specification
+
+
+# Created at 2020-06-21T14:13:18.788
+Unexpected IOException: I,1,sun.os.patch.level,
+
+
+# Created at 2020-06-21T14:13:18.790
+Unexpected IOException: I,1,java.library.path,C:\005CProgram Files\005CJava\005Cjdk-12.0.2\005Cbin;C:\005CWindows\005CSun\005CJava\005Cbin;C:\005CWindows\005Csystem32;C:\005CWindows;C:/Program Files/Java/jdk-12.0.2/bin/server;C:/Program Files/Java/jdk-12.0.2/bin;C:\005Capp\005CHatim\005Cproduct\005C11.2.0\005Cdbhome_1\005Cbin;C:\005CWindows\005Csystem32;C:\005CWindows;C:\005CWindows\005CSystem32\005CWbem;C:\005CWindows\005CSystem32\005CWindowsPowerShell\005Cv1.0\005C;C:\005CWindows\005CSystem32\005COpenSSH\005C;C:\005CProgram Files (x86)\005CNVIDIA Corporation\005CPhysX\005CCommon;C:\005CProgram Files\005CIntel\005CWiFi\005Cbin\005C;C:\005CProgram Files\005CCommon Files\005CIntel\005CWirelessCommon\005C;C:\005CProgram Files\005CJava\005Cjdk-12.0.2\005Cbin;C:\005CProgram Files\005CNVIDIA Corporation\005CNVIDIA NvDLISR;C:\005CProgram Files\005CGit\005Ccmd;C:\005CProgram Files (x86)\005CMicrosoft SQL Server\005C150\005CDTS\005CBinn\005C;C:\005CProgram Files\005CMicrosoft SQL Server\005CClient SDK\005CODBC\005C170\005CTools\005CBinn\005C;C:\005CProgram Files (x86)\005CMicrosoft SQL Server\005C150\005CTools\005CBinn\005C;C:\005CProgram Files\005CMicrosoft SQL Server\005C150\005CTools\005CBinn\005C;C:\005CProgram Files\005CMicrosoft SQL Server\005C150\005CDTS\005CBinn\005C;C:\005CProgram Files\005CMicrosoft SQL Server\005C130\005CTools\005CBinn\005C;C:\005CUsers\005CHatim\005CAppData\005CRoaming\005Cnvm;C:\005CProgram Files\005Cnodejs;C:\005CUsers\005CHatim\005C.windows-build-tools\005Cpython27\005C;C:\005CWindows\005Csystem32;C:\005CWindows;C:\005CWindows\005CSystem32\005CWbem;C:\005CWindows\005CSystem32\005CWindowsPowerShell\005Cv1.0\005C;C:\005CWindows\005CSystem32\005COpenSSH\005C;C:\005CProgram Files (x86)\005CNVIDIA Corporation\005CPhysX\005CCommon;C:\005CProgram Files\005CIntel\005CWiFi\005Cbin\005C;C:\005CProgram Files\005CCommon Files\005CIntel\005CWirelessCommon\005C;C:\005CUsers\005CHatim\005CAppData\005CLocal\005CMicrosoft\005CWindowsApps;C:\005CUsers\005CHatim\005CAppData\005CLocal\005CPrograms\005CMicrosoft VS Code\005Cbin;C:\005CUsers\005CHatim\005CAppData\005CRoaming\005Cnpm;c:\005Cmingw-w64\005Cx86_64-8.1.0-win32-seh-rt_v6-rev0\005Cmingw64\005Cbin;C:\005CProgram Files\005CJava\005Cjdk-12.0.2\005Cbin;C:\005CProgram Files\005CDocker Toolbox;C:\005CUsers\005CHatim\005CAppData\005CRoaming\005Cnvm;C:\005CProgram Files\005Cnodejs;C:\005CUsers\005CHatim\005CDownloads\005Ceclipse;;.
+
+
+# Created at 2020-06-21T14:13:18.791
+Unexpected IOException: I,1,java.vm.info,mixed mode\002C sharing
+
+
+# Created at 2020-06-21T14:13:18.791
+Unexpected IOException: I,1,java.vendor,Oracle Corporation
+
+
+# Created at 2020-06-21T14:13:18.792
+Unexpected IOException: I,1,java.vm.version,12.0.2+10
+
+
+# Created at 2020-06-21T14:13:18.792
+Unexpected IOException: I,1,sun.io.unicode.encoding,UnicodeLittle
+
+
+# Created at 2020-06-21T14:13:18.793
+Unexpected IOException: I,1,java.class.version,56.0
+
+
