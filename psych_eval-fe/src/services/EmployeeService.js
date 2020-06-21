@@ -1,8 +1,11 @@
 import ApiService from "./Api";
-
+import Header from "../Header";
+const HEADERS = {
+  'Content-Type': 'application/json',
+}
 class EmployeeService {
   constructor() {
-    this.myApi = new ApiService();
+    this.myApi = new ApiService(HEADERS);
   }
   // constructor(idEmployee, nomEmployee, prenomEmployee, emailEmployee, passwordEmployee){
   //     this.idEmployee = idEmployee;
@@ -13,6 +16,11 @@ class EmployeeService {
   // }
   async getEmployee(idEmployee) {
     let employee = await this.myApi.get(`/employe/${idEmployee}`);
+    return employee;
+  }
+  async loginEmployee(email, password){
+    let data = {email:email,password:password}
+    let employee = await this.myApi.post(`/loginemploye`,data);
     return employee;
   }
 
