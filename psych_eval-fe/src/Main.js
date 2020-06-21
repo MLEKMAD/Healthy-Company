@@ -1,6 +1,7 @@
 import React from 'react'
 import './Main.css';
 import Container from './Container'
+import Questionnaire from './Questionnaire'
 import QuestionnaireWindow from "./QuestionnaireWindow";
 import store from './store'
 
@@ -11,7 +12,7 @@ const Main = ({questionnaireId}) =>{
         console.log(questionnaires);
 
         if(!questionnaireId){
-            return <Container q={questionnaires}/>;
+            return <Questionnaire q={questionnaires}/>;
         }
         else{
             return <QuestionnaireWindow activeUserId ={questionnaireId} />;
