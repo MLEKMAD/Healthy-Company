@@ -7,9 +7,10 @@ import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { SignUp } from './SignUp';
-import {SignIn} from './SignIn'
-
-
+import {SignIn} from './SignIn';
+import Container from './Container'
+import UserRec from './UserRec'
+import Questionnaire from './Questionnaire'
 
 
 function App() {

@@ -10,7 +10,7 @@ class TestsService {
 
     
     async uploadMultiFiles(files, idChefProject){
-        await this.myApi.post(`/uploadMultipleFiles/${idChefProject}`,files)
+        await this.myApi.post(`/uploadMultipleFiles/${idChefProject}`,files,)
     }
 
     async downloadFile(fileId){
