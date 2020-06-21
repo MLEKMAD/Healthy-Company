@@ -9,19 +9,15 @@ import UserRec from './UserRec';
 import SignIn from './SignIn';
 import Header from './Header'
 import MakeQuestionnaire from './MakeQuestionnaire';
+import Routes from './routes';
 
-const Main = ({questionnaireId}) =>{
-    const { questionnaires} = store.getState();
-
+const Main = () =>{
     const renderMainContent = () =>{
-        console.log(questionnaires);
 
-        if(!questionnaireId){
-            return <SignIn/>;
-        }
-        else{
-            return <QuestionnaireWindow activeUserId ={questionnaireId} />;
-    }
+     
+            return <Routes/>;
+
+    
     }
     
     return(

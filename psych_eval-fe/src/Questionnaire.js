@@ -7,17 +7,12 @@ import {Fieldset} from 'primereact/fieldset';
 import {RadioButton} from 'primereact/radiobutton';
 import {SelectButton} from 'primereact/selectbutton';
 import TestsService from './services/TestsService';
+import { Button } from 'primereact/button';
 
 
 const Questionnaire = (/*{questionnaire}*/)=>{
 
 
-    useEffect(async () => {
-       
-     
-
-
-    })
     //const {title, questionnaire_id  } = questionnaire;
 
      const [title, setTitle] =useState( "Anger Management");
@@ -71,10 +66,10 @@ const Questionnaire = (/*{questionnaire}*/)=>{
      const updateFieldChanged = (index,value) => {
 
         console.log('index: ' + index);
-        let newArr = [...values]; // copying the old datas array
-        newArr[index] = value; // replace e.target.value with whatever you want to change it to
+        let newArr = [...values]; 
+        newArr[index] = value; 
     
-        setValues(newArr); // ??
+        setValues(newArr); 
     }
     
     const renderQuestionnaire = (questions) => {
@@ -106,13 +101,19 @@ const Questionnaire = (/*{questionnaire}*/)=>{
              }
         
          )
-        return q;
+        return (<div>
+            {q}
+            <Button label="Submit answer"/>
+            </div>
+            );
         };
 
 
 
     return(
+        
         renderQuestionnaire(questions)
+       
     );
    
 

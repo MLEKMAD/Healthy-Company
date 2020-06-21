@@ -10,6 +10,7 @@ import { Dropdown } from "primereact/dropdown";
 import ChefProjetService from "./services/ChefProjetService";
 import EmployeeService from "./services/EmployeeService";
 import "./Sign.css"
+import { Link } from "react-router-dom";
 
 const userTypes = [
   { label: "employee", value: 0 },
@@ -63,7 +64,9 @@ export class SignIn extends Component {
       </div>
 
   </div>
+  <Link to="/User">
   <Button type="button" label="Log In"/>
+  </Link>
   <p>
            Create account? <Button id="btn1" className="p-button-raised p-button-rounded" label="Sign Up"></Button>
           </p>
