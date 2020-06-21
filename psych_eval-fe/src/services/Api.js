@@ -4,16 +4,16 @@ const API_ROOT = 'http://localhost:8083/swagger-ui.html';
 const TIMEOUT = 60000;
 const HEADERS = {
     'Content-Type': 'application/json',
-    Accept: 'application/json',
+    responseType: 'blob',
     'Access-Control-Allow-Origin': '*',
 };
 
 class ApiService {
 
-    constructor( baseURL = API_ROOT, timeout = TIMEOUT, headers = HEADERS ) {
+    constructor(headers) {
         const client = axios.create({
-            baseURL,
-            timeout,
+            API_ROOT,
+            TIMEOUT,
             headers
         });
 
@@ -31,7 +31,7 @@ class ApiService {
     }
 
     get(path) {
-        return this.client.get(path,{mode:"cors"}).then(response => response.data);
+        return this.client.get(path).then(response => response.data);
     }
 
     post(path, payload) {

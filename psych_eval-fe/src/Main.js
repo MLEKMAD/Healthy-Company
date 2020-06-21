@@ -6,6 +6,9 @@ import QuestionnaireWindow from "./QuestionnaireWindow";
 import store from './store'
 import User from './User'
 import UserRec from './UserRec';
+import SignIn from './SignIn';
+import Header from './Header'
+import MakeQuestionnaire from './MakeQuestionnaire';
 
 const Main = ({questionnaireId}) =>{
     const { questionnaires} = store.getState();
@@ -14,7 +17,7 @@ const Main = ({questionnaireId}) =>{
         console.log(questionnaires);
 
         if(!questionnaireId){
-            return <UserRec/>;
+            return <SignIn/>;
         }
         else{
             return <QuestionnaireWindow activeUserId ={questionnaireId} />;
@@ -22,7 +25,9 @@ const Main = ({questionnaireId}) =>{
     }
     
     return(
-        <main className="Main">{renderMainContent()}</main>
+        <main className="Main">
+            {renderMainContent()}
+            </main>
     )
 }
 export default Main;

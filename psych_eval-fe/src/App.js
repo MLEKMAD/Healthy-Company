@@ -14,15 +14,12 @@ import Questionnaire from './Questionnaire'
 
 
 function App() {
-  const {  questionnaireId} = store.getState();
 
   return (
     <div className="App">
-     <Header/>
-      <Questionnaire/>
-     {/* <SignIn/> */}
-     {/* <UserRec/> */}
-     {/* <Container/> */}
+      {/* <Main questionnaireId={questionnaireId} /> */}
+      <Header />
+      <Main/>
     </div>    
   );
 }

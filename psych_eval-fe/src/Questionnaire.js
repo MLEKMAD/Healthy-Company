@@ -13,13 +13,8 @@ const Questionnaire = (/*{questionnaire}*/)=>{
 
 
     useEffect(async () => {
-       let api = new TestsService();
-       let myReader = new FileReader();
-
-       let blob = api.downloadFile(1);
        
-      let text = await blob.text();
-      console.log(text)
+     
 
 
     })

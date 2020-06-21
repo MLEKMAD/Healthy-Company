@@ -7,7 +7,7 @@ import "primeflex/primeflex.css";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
-import "./style/index.css";
+//import "./style/index.css";
 import ChefProjetService from "./services/ChefProjetService";
 import EmployeeService from "./services/EmployeeService";
 
