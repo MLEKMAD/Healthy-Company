@@ -39,7 +39,7 @@ public class EmployeController {
 	        return employeservice.createChefProjet(employe);
 	    }
 	    @RequestMapping(method=RequestMethod.POST,value="/loginemploye")
-	    public Employe loadByEmailPassword(@RequestBody String email, String password) throws EmployeNotFoundException{
+	    public Employe loadByEmailPassword(String email, String password) throws EmployeNotFoundException{
 	        return employeservice.loadByEmailPassword(email, password);
 	    }
 
