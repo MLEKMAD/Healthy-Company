@@ -32,8 +32,8 @@ public class TestEmpController {
     private TestEmpService dbFileEmpStorageService;
     @CrossOrigin(origins="http://localhost:3000")
     @PostMapping("/uploadFileEmp/{idChefProjet}")
-    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file,@PathVariable("idChefProjet") long idChefProjet) {
-        TestEmp dbFile = dbFileEmpStorageService.storeFile(file,idChefProjet);
+    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file,@PathVariable("idemploye") long idemploye) {
+        TestEmp dbFile = dbFileEmpStorageService.storeFile(file,idemploye);
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
@@ -44,11 +44,11 @@ public class TestEmpController {
                  file.getSize());
     }
     @CrossOrigin(origins="http://localhost:3000")
-    @PostMapping("/uploadMultipleFilesEmp/{idchefProjet}")
-    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @PathVariable("idchefProjet") long idChefProjet) {
+    @PostMapping("/uploadMultipleFilesEmp/{idemploye}")
+    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @PathVariable("idemploye") long idemploye) {
         return Arrays.asList(files)
                 .stream()
-                .map(file -> uploadFile(file, idChefProjet))
+                .map(file -> uploadFile(file, idemploye))
                 .collect(Collectors.toList());
     }
     @CrossOrigin(origins="http://localhost:3000")

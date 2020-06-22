@@ -17,7 +17,7 @@ public class TestEmpService {
     @Autowired
     private TestEmpRepository dbFileEmpRepository;
 
-    public TestEmp storeFile(MultipartFile file , long idChefProjet) {
+    public TestEmp storeFile(MultipartFile file , long idemploye) {
         // Normalize file getOriginalFilename
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 
@@ -28,7 +28,7 @@ public class TestEmpService {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
-            TestEmp dbFile = new TestEmp(fileName, file.getBytes(),idChefProjet);
+            TestEmp dbFile = new TestEmp(fileName, file.getBytes(),idemploye);
 
             return dbFileEmpRepository.save(dbFile);
         } catch (IOException ex) {

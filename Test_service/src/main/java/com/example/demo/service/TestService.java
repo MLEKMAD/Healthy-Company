@@ -37,13 +37,17 @@ public class TestService  {
         }
     }
 
-    public Test getFile(String fileId) {
-        return dbFileRepository.findByIdChefProjet(fileId)
+    public Test getOneFile(String fileId) {
+        return dbFileRepository.findByIdFile(fileId)
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
     }
     public Test getAllFile() {
         return dbFileRepository.findFile()
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id "));
     }
-    
+ 
+    public Test getlastFile(long id_chef_projet) {
+        return dbFileRepository.findMax(id_chef_projet)
+                .orElseThrow(() -> new MyFileNotFoundException("File not found with id "));
+    }
 }
