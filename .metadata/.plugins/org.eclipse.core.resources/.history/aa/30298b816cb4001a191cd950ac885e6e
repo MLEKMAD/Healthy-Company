@@ -1,0 +1,49 @@
+package com.example.demo.models;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import io.swagger.annotations.ApiModelProperty;
+
+public class Questionnaire {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id_questionnaire")
+	@ApiModelProperty(notes="unique id of the employe")
+	private long id_questionnaire;
+	@Column(name="Questions")
+	@ApiModelProperty(notes="")
+	private List<String> Questions;
+	@Column(name="id_chef_projet")
+	@ApiModelProperty(notes="data of project lead of the employe")
+	private long id_chef_projet;
+	
+	public Questionnaire(List<String> questions, long id_chef_projet) {
+		super();
+		Questions = questions;
+		this.id_chef_projet = id_chef_projet;
+	}
+	
+	public long getId_questionnaire() {
+		return id_questionnaire;
+	}
+	public void setId_questionnaire(long id_questionnaire) {
+		this.id_questionnaire = id_questionnaire;
+	}
+	public List<String> getQuestions() {
+		return Questions;
+	}
+	public void setQuestions(List<String> questions) {
+		Questions = questions;
+	}
+	public long getId_chef_projet() {
+		return id_chef_projet;
+	}
+	public void setId_chef_projet(long id_chef_projet) {
+		this.id_chef_projet = id_chef_projet;
+	}
+}

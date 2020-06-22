@@ -9,4 +9,11 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
     <fullyQualifiedTypeName name="com.example.demo.repositories.ChefProjetNotFoundException"/>
     <fullyQualifiedTypeName name="com.example.demo.services.ChefProjetServices"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.example.demo.repositories.QuestionnaireRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.services.QuestionnaireService"/>
+    <fullyQualifiedTypeName name="com.example.demo.models.Questionnaire"/>
+    <fullyQualifiedTypeName name="com.example.demo.repositories.ReponseRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.services.ReponseService"/>
+    <fullyQualifiedTypeName name="com.example.demo.models.Reponse"/>
 </qualifiedTypeNameHistroy>

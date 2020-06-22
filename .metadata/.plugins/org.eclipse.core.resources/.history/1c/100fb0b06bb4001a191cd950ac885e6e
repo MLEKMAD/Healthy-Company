@@ -1,0 +1,45 @@
+package com.example.demo.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.demo.models.Employe;
+import com.example.demo.models.Questionnaire;
+import com.example.demo.repositories.EmployeNotFoundException;
+import com.example.demo.repositories.EmployeRepository;
+import com.example.demo.repositories.QuestionnaireRepository;
+
+@Service
+@Transactional
+@ComponentScan("com.example.repository")
+public class QuestionnaireService {
+
+	@Autowired
+	private QuestionnaireRepository QuestionnaireRepo;
+	
+	public Questionnaire getChefProjet(long id)  {
+		Questionnaire questionnaire = QuestionnaireRepo.findById(id);
+		return questionnaire;
+	}
+	
+	public Questionnaire createChefProjet(Questionnaire Questionnaire){
+		return QuestionnaireRepo.save(Questionnaire);
+	}
+	
+	public void updateChefProjet(Questionnaire Questionnaire) {
+		QuestionnaireRepo.save(Questionnaire);
+		return;
+	}
+	
+	public void deleteChefProjet(long id_emp)  {
+		QuestionnaireRepo.deleteById(id_emp);
+	}
+
+}
+
+
+

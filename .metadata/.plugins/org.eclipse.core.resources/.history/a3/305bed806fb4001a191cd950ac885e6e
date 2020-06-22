@@ -1,0 +1,46 @@
+package com.example.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.demo.models.Questionnaire;
+import com.example.demo.models.Reponse;
+import com.example.demo.repositories.EmployeNotFoundException;
+import com.example.demo.repositories.QuestionnaireRepository;
+import com.example.demo.repositories.ReponseRepository;
+@Service
+@Transactional
+@ComponentScan("com.example.repository")
+public class ReponseService {
+
+	@Autowired
+	private ReponseRepository ReponseRepository;
+	
+	public Questionnaire getQuestionnaireId(long id_reponse) throws EmployeNotFoundException {
+		Questionnaire questionnaire = ReponseRepository
+				.findById(id_reponse)
+				.orElseThrow(() -> new EmployeNotFoundException(id_Questionnaire));
+		return questionnaire;
+	}
+	public Reponse getQuestionnaireIdChef(long id_questionnaire) throws EmployeNotFoundException {
+		Reponse reponse = ReponseRepository
+				.findReponseByIdQuest(id_questionnaire)
+				.orElseThrow(() -> new EmployeNotFoundException(id_questionnaire));
+		return reponse;
+	}	
+	public Reponse createQuestionnaire(Reponse Reponse){
+		return ReponseRepository.save(Reponse);
+	}
+	
+	public void updateQuestionnaire(Questionnaire Questionnaire) {
+		ReponseRepository.save(Questionnaire);
+		return;
+	}
+	
+	public void deleteQuestionnaire(long id_emp)  {
+		ReponseRepository.deleteById(id_emp);
+	}
+
+}

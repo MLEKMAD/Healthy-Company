@@ -1,0 +1,67 @@
+package com.example.demo.models;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import io.swagger.annotations.ApiModelProperty;
+
+
+@Entity
+@Table(name="questionnaire")
+public class Questionnaire {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id_questionnaire")
+	@ApiModelProperty(notes="unique id of the employe")
+	private long id_questionnaire;
+	@Column(name="title_questionnaire")
+	@ApiModelProperty(notes="")
+	private String title_questionnaire;
+	@Column(name="Questions")
+	@ApiModelProperty(notes="")
+	private String questionnaire;
+	@Column(name="id_chef_projet")
+	@ApiModelProperty(notes="data of project lead of the employe")
+	private long id_chef_projet;
+	
+	public Questionnaire(String questions,String title_questionnaire, long id_chef_projet) {
+		super();
+		this.title_questionnaire=title_questionnaire;
+		this.questionnaire = questions;
+		this.id_chef_projet = id_chef_projet;
+	}
+	
+	public long getId_questionnaire() {
+		return id_questionnaire;
+	}
+	public void setId_questionnaire(long id_questionnaire) {
+		this.id_questionnaire = id_questionnaire;
+	}
+	public String getQuestionnaire() {
+		return questionnaire;
+	}
+	public void setQuestionnaire(String questions) {
+		questionnaire = questions;
+	}
+	public long getId_chef_projet() {
+		return id_chef_projet;
+	}
+	public void setId_chef_projet(long id_chef_projet) {
+		this.id_chef_projet = id_chef_projet;
+	}
+
+	public String getTitle_questionnaire() {
+		return title_questionnaire;
+	}
+
+	public void setTitle_questionnaire(String title_questionnaire) {
+		this.title_questionnaire = title_questionnaire;
+	}
+
+}

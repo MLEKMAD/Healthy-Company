@@ -1,0 +1,49 @@
+package com.example.demo.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+
+import com.example.demo.models.Questionnaire;
+import com.example.demo.repositories.EmployeNotFoundException;
+import com.example.demo.repositories.QuestionnaireRepository;
+
+@Service
+@Transactional
+@ComponentScan("com.example.repository")
+public class QuestionnaireService {
+
+	@Autowired
+	private QuestionnaireRepository QuestionnaireRepo;
+	
+	public Questionnaire getQuestionnaireId(long id_emp) throws EmployeNotFoundException {
+		Questionnaire questionnaire = QuestionnaireRepo
+				.findById(id_emp)
+				.orElseThrow(() -> new EmployeNotFoundException(id_emp));
+		return questionnaire;
+	}
+	public Questionnaire getQuestionnaireIdChef(long id_chef_projet)  {
+		Questionnaire questionnaire = QuestionnaireRepo.findByQuestionByIdChef(idchefprojet);
+		return questionnaire;
+	}	
+	public Questionnaire createQuestionnaire(Questionnaire Questionnaire){
+		return QuestionnaireRepo.save(Questionnaire);
+	}
+	
+	public void updateQuestionnaire(Questionnaire Questionnaire) {
+		QuestionnaireRepo.save(Questionnaire);
+		return;
+	}
+	
+	public void deleteQuestionnaire(long id_emp)  {
+		QuestionnaireRepo.deleteById(id_emp);
+	}
+
+}
+
+
+
