@@ -15,6 +15,7 @@ import Container  from './components/Container';
 
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import MakeQuestionnaire from './components/MakeQuestionnaire';
 
 
 ReactDOM.render(
@@ -22,9 +23,10 @@ ReactDOM.render(
             <Switch>
                 <Route exact path="/" component={Signin} />
                 <Route exact path="/signup" component={Signup} />          
-                <Route exact path="/Dashboard" component={App} />
+                <Route exact path="/Dashbord" component={App} />
                 <Route exact path="/DashbordChefProjet" component={DashboardChefProjetApp} />
                 <Route exact path="/DashbordEmp" component={DashboardEmpApp} />
+                <Route exact path="/addQuesttions" component={MakeQuestionnaire} />
 
                 <Route exact path="/Questionnaire" component={Questionnaire} />
                 <Route exact path="/Container" component={Container} />

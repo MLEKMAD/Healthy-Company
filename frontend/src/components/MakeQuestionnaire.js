@@ -7,9 +7,8 @@ import "primeflex/primeflex.css";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
-import ChefProjetService from "../service/ChefProjetService";
-import EmployeeService from "../service/EmployeeService";
-import "./Sign.css"
+
+import "./Sign.css";
 
 const userTypes = [
   { label: "employee", value: 0 },
@@ -19,53 +18,62 @@ export class MakeQuestionnaire extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfQuestions: 0,
-      questionnaire: {
-          title : "",
-          questions : []
-      },
-   
+      currentQuestion: "",
+      title: "",
+      questions: [],
     };
   }
 
-   
-  
   render() {
     return (
       <div>
         <h3> Make a Questionnaire</h3>
-      <div className="p-field p-grid">
-      <label htmlFor="firstname3" className="p-col-fixed" style={{width:'100px'}}>Email</label>
-      <div className="p-col">
-          <InputText id="email" value={this.state.email}
-                onChange={(e) => {
-                  this.setState({ email: e.value });
-                }} type="text"/>
-      </div>
-  </div>
-  <div className="p-field p-grid">
-      <label htmlFor="lastname3" className="p-col-fixed" style={{width:'100px'}}>Password</label>
-      <div className="p-col">
-      <InputText id="password" value={this.state.password}
-                onChange={(e) => {
-                  this.setState({ password: e.value });
-                }} type="password"/>
-
-      </div>
-
-  </div>
-  <Button type="button" label="Log In"/>
-  <p>
-           Create account? <Button id="btn1" className="p-button-raised p-button-rounded" label="Sign Up"></Button>
-          </p>
+        <div className="p-field p-grid">
+          <label htmlFor="firstname3" className="p-col-fixed" style={{ width: "100px" }}>
+            Title
+          </label>
+          <div className="p-col">
+            <InputText
+              id="title"
+              value={this.state.title}
+              onChange={(e) => {
+                this.setState({ title: e.target.value });
+              }}
+              type="text"
+            />
+          </div>
         </div>
+        <div className="p-field p-grid">
+          <label htmlFor="lastname3" className="p-col-fixed" style={{ width: "100px" }}>
+            question
+          </label>
+          <div className="p-col">
+            <InputText
+              id="password"
+              value={this.state.currentQuestion}
+              onChange={(e) => {
+                this.setState({ currentQuestion: e.target.value });
+              }}
+              type="text"
+            />
+          </div>
+        </div>
+        <Button
+          type="button"
+          label="Add question"
+          onClick={() => {
+            let newArr = [...this.state.questions];
 
-        
- 
+            newArr.push(this.state.currentQuestion);
+            this.setState({ questions: newArr });
+            console.log(this.state.questions);
+            console.log(this.state);
 
-
-
-
+            console.log(this.state.currentQuestion);
+          }}
+        />
+        <Button type="button" label="Submit questionnaire" />
+      </div>
     );
   }
 }

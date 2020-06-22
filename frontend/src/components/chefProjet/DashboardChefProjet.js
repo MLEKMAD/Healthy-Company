@@ -11,6 +11,7 @@ import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
 import {Growl} from 'primereact/growl';
 import {FileUpload} from 'primereact/fileupload';
+import MakeQuestionnaire from '../MakeQuestionnaire';
 
 export class DashboardChefProjet extends Component {
 
@@ -156,6 +157,7 @@ export class DashboardChefProjet extends Component {
                             <Column field="test" header="test" sortable={true} />
                         </DataTable>
                     </div>
+                    <MakeQuestionnaire/>
                 </div>
                     
         </div>

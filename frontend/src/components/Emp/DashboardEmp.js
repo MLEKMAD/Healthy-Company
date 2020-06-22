@@ -13,6 +13,7 @@ import { Growl } from "primereact/growl";
 import { FileUpload } from "primereact/fileupload";
 import { Messages } from "primereact/messages";
 import Questionnaire from '../Questionnaire';
+import User from '../../User'
 export class DashboardEmp extends Component {
   constructor() {
     super();
@@ -142,7 +143,7 @@ export class DashboardEmp extends Component {
               <Column field="test" header="test" sortable={true} />
             </DataTable>
           </div>
-          <Questionnaire/>
+          <User/>
         </div>
         
       </div>

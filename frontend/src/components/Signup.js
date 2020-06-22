@@ -4,12 +4,10 @@ import "primereact/resources/themes/nova-light/theme.css";
 import "primeicons/primeicons.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
+import { Dropdown } from "primereact/dropdown";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
-import { Dropdown } from "primereact/dropdown";
-//import "./style/index.css";
-import ChefProjetService from "../service/ChefProjetService";
-import EmployeeService from "../service/EmployeeService";
+
 import { Link, Redirect } from "react-router-dom";
 
 const userTypes = [
@@ -19,149 +17,186 @@ const userTypes = [
 export class SignUp extends Component {
   constructor(props) {
     super(props);
-    this.register = this.register.bind(this)
+    this.register = this.register.bind(this);
+    this.handleChangeE = this.handleChangeE.bind(this);
+    this.handleChangeP = this.handleChangeP.bind(this);
     this.state = {
       fName: "",
       lName: "",
       email: "",
       password: "",
-      etat:'nothing',
+      mentalState: "",
+      type: null,
       redirect: null,
-      type:null
-
     };
   }
-  register() {
-    let employee = {
-      nom_emp: this.state.lName,
-      prenom_emp: this.state.fName,
-      email_emp: this.state.email,
-      password_emp: this.state.password,
-      etat_emp: this.state.etat,
-      id_chef_projet: 1,
-    }
-    console.log("employee",employee)
-    
-    axios.post("http://localhost:8083/employe",JSON.stringify(employee),{
-      headers: { 'content-type':'application/json; charset=UTF-8'}
-  }).then(
-      (res)=>{
-        console.log(res)
-          this.setState({redirect:"/DashbordEmp"})
-      }
-    ).catch(err=>{
-      if(err.response){
-        console.log(err.response)
-      }
-    })
 
-   
+  // renderRedirect = () => {
+  //   if (this.state.redirect) {
+  //     return <Redirect to='/app/User' />
+  //   }
+  // }
+  register(email, password) {
+    // let history = useHistory();
+    if (this.state.type === 0) {
+      axios
+        .post(`http://localhost:8083/loginemploye?email=${email}&password=${password}`)
+        .then((res) => {
+          console.log(res);
+          if (res.status === 200) {
+            this.setState({
+              lName: res.data.nom_emp,
+              fName: res.data.prenom_emp,
+              mentalState: res.data.etat_emp,
+              redirect: "/DashbordEmp",
+            });
+          } 
+        })
+        .catch((error) => {
+          if (error.response) {
+            alert("your email or your password are incorrect ");
+
+            console.log(error.response);
+          }
+        });
+    } else {
+      axios
+        .post(`http://localhost:8083/loginchefprojet?email=${email}&password=${password}`)
+        .then((res) => {
+          console.log(res);
+          if (res.status === 200) {
+            this.setState({
+              lName: res.data.nom_chef_projet,
+              fName: res.data.prenom_chef_projet,
+              redirect: "/Dashbord",
+            });
+          } 
+        })
+        .catch((error) => {
+          if (error.response) {
+            alert("your email or your password are incorrect ");
+
+            console.log(error.response);
+          }
+        });
+    }
+  }
+  handleChangeE(event) {
+    this.setState({ email: event.target.value });
+  }
+  handleChangeP(event) {
+    this.setState({ password: event.target.value });
   }
   render() {
+    const { email, password } = this.state;
     if (this.state.redirect) {
       return <Redirect to={this.state.redirect} />;
     }
     return (
-      <div className="p-col p-col-align-end">
-        <div className="ui-grid">
-          <h1>Sign Up</h1>
-          <div className="p-inputgroup">
-            <span className="p-inputgroup-addon">
-              <i className="pi pi-user"></i>
-            </span>
-            <span className="p-float-label">
-              <InputText
-                value={this.state.lName}
-                onChange={(e) => {
-                  this.setState({ lName: e.target.value });
-                }}
-                id="id3"
-                className="input"
-                required={true}
-              />
-              <label>Last Name</label>
-            </span>
-          </div>
+      <div style={{
+        position: 'absolute', left: '50%', top: '50%',
+        transform: 'translate(-50%, -50%)',
+        backgroundColor :' rgb(3, 252, 186)',
+        borderRadius: '25px',
+         width: '300px',
+        height: '500px', 
 
-          <div className="p-inputgroup">
-            <span className="p-inputgroup-addon">
-              <i className="pi pi-user"></i>
-            </span>
-            <span className="p-float-label">
-              <InputText
-                value={this.state.fName}
-                onChange={(e) => {
-                  this.setState({ fName: e.target.value });
-                }}
-                id="id4"
-                className="input"
-                required={true}
-              />
-              <label>First Name</label>
-            </span>
-          </div>
-          <div className="p-inputgroup">
-            <span className="p-inputgroup-addon">@</span>
-            <span className="p-float-label">
-              <InputText
-                value={this.state.email}
-                onChange={(e) => {
-                  this.setState({ email: e.target.value });
-                }}
-                id="id1"
-                className="input"
-                required={true}
-                type="email"
-              />
-              <label>Email</label>
-            </span>
-          </div>
-          <div className="p-inputgroup">
-            <span className="p-inputgroup-addon">
-              <i className="pi pi-lock"></i>
-            </span>
-            <span className="p-float-label">
-              <InputText
-                value={this.state.password}
-                onChange={(e) => {
-                  this.setState({ password: e.target.value });
-                }}
-                id="id2"
-                className="input"
-                required={true}
-                type="password"
-              />
-              <label>Password</label>
-            </span>
-          </div>
-          <div className="p-inputgroup">
-            <span className="p-inputgroup-addon">?</span>
-            <span className="p-float-label">
-              <Dropdown
-                id="id5"
-                value={this.state.type}
-                options={userTypes}
-                onChange={(e) => {
-                  this.setState({ type: e.target.value });
-                }}
-                placeholder="Select a Type"
-                required={true}
-              />
-            </span>
-          </div>
-   
-          <Button onClick={()=>{this.register()}} id="btn" label="Submit" type="submit" className="p-button-raised p-button-rounded" />
-    
+    }}>
+        <h1 style ={{textAlign :'center'}}> Sign Up</h1>
+        <br/>
+        <br/>
+        <br/>
 
-          <p>
-            You already have an account?
-    <Link to= '/' label="Sign Up" >
-             <Button id="btn1" className="p-button-raised p-button-rounded" label="Sign In"></Button>
-    </Link>
-
-          </p>
+        <div className="p-field p-grid">
+          
+          
+          <span className="p-float-label" style={{
+              margin:'0',
+              position: 'absolute',
+               top :'15%',
+               left: '50%',
+             transform: 'translate(-50%, -50%)'}}>
+          <InputText id="email" value={this.state.email} onChange={this.handleChangeE} type="email" required={true} />
+                <label htmlFor="float-input">First Name</label>
+            </span>
         </div>
-      </div>
+        <div className="p-field p-grid">
+      
+
+          
+          <span className="p-float-label" style={{
+              margin:'0',
+              position: 'absolute',
+              top :'25%',
+
+               left: '50%',
+             transform: 'translate(-50%, -50%)'}}>
+          <InputText id="password" required={true} value={this.state.password} onChange={this.handleChangeP} type="password" />
+                <label htmlFor="float-input">Last Name</label>
+            </span>
+            <span className="p-float-label" style={{
+              margin:'0',
+              position: 'absolute',
+              top :'35%',
+
+               left: '50%',
+             transform: 'translate(-50%, -50%)'}}>
+          <InputText id="password" required={true} value={this.state.password} onChange={this.handleChangeP} type="password" />
+                <label htmlFor="float-input">Email</label>
+            </span>
+        </div>
+        <span className="p-float-label" style={{
+              margin:'0',
+              position: 'absolute',
+              top :'45%',
+
+               left: '50%',
+             transform: 'translate(-50%, -50%)'}}>
+          <InputText id="password" required={true} value={this.state.password} onChange={this.handleChangeP} type="password" />
+                <label htmlFor="float-input">Password</label>
+            </span>
+       
+        <div className="p-col" style={{
+              margin:'0',
+              position: 'absolute',
+              top :'55%',
+
+               left: '50%',
+             transform: 'translate(-50%, -50%)'}}>
+          <Dropdown
+            id="id5"
+            value={this.state.type}
+            options={userTypes}
+            onChange={(e) => {
+              this.setState({ type: e.target.value });
+            }}
+            placeholder="Select a Type"
+          />
+        </div>
+        <br/>
+        <br/>
+
+
+        <br/>      <br/> <br/>   <br/> <br/>  <br/> 
+        <br/> 
+        <br/> 
+        <br/> 
+        <br/> 
+        <br/> 
+        <br/> 
+
+        <p>
+          <br/>          <br/>
+      
+            <Button style={{
+              margin:'0',
+              position: 'absolute',
+               top :'80%',
+               left: '50%',
+             transform: 'translate(-50%, -50%)'}} type="button" label="Sign up" />
+        </p>
+        </div>
+
     );
   }
 }

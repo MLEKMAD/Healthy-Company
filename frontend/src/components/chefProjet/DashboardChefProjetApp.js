@@ -90,15 +90,15 @@ class DashboardChefProjetApp extends Component {
     createMenu() {
         this.menu = [
             {label: 'MyDashboard', icon: 'pi pi-fw pi-user ', to:'/DashbordChefProjet'},
-            {label: 'MyEmploye', icon: 'pi pi-fw pi-home', to:'/Dashboard'},
-            {
-                label: 'Components', icon: 'pi pi-fw pi-globe', badge: '9',
-                items: [
-					{label: 'Sample Page', icon: 'pi pi-fw pi-th-large', to: '/sample'},
-					{label: 'Forms', icon: 'pi pi-fw pi-file', to: '/forms'},
-					{label: 'Menus', icon: 'pi pi-fw pi-plus', to: '/menus'},
-                ]
-            }
+            {label: 'Add questions', icon: 'pi pi-fw pi-plus', to:'/addQuesttions'},
+            // {
+            //     label: 'Components', icon: 'pi pi-fw pi-globe', badge: '9',
+            //     items: [
+			// 		{label: 'Sample Page', icon: 'pi pi-fw pi-th-large', to: '/sample'},
+			// 		{label: 'Forms', icon: 'pi pi-fw pi-file', to: '/forms'},
+			// 		{label: 'Menus', icon: 'pi pi-fw pi-plus', to: '/menus'},
+            //     ]
+            // }
         ];
     }
 
@@ -149,7 +149,7 @@ class DashboardChefProjetApp extends Component {
 
                 <div ref={(el) => this.sidebar = el} className={sidebarClassName} onClick={this.onSidebarClick}>
                     <div className="layout-logo">
-                        <img alt="Logo" src={'assets/layout/images/logo.svg'} />
+                        <img alt="Logo" src={'assets/layout/images/psycho.png'} />
                     </div>
                     <AppProfile />
                     <AppMenu model={this.menu} onMenuItemClick={this.onMenuItemClick} />
