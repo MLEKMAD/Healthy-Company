@@ -1,12 +1,11 @@
-import {SET_QUESTIONNAIRE_ID} from "../constants/action-types"
+import { SET_QUESTIONNAIRE_ID } from "../constants/action-types";
 
-export default function activeUserId (state= null, action){
-    switch (action.type) {
-        case SET_QUESTIONNAIRE_ID:
-            return action.payload;
-        
-        default:
-            return state ;
-    }
+export default function activeUserId(state = null, action) {
+  switch (action.type) {
+    case SET_QUESTIONNAIRE_ID:
+      return action.payload;
 
+    default:
+      return state;
+  }
 }

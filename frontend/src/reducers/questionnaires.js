@@ -1,5 +1,5 @@
-import {questionnaires} from '../static-data'
+import { questionnaires } from "../static-data";
 
-export default (state =questionnaires, action) => {
-    return state;
+export default (state = questionnaires, action) => {
+  return state;
 };

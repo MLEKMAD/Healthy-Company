@@ -1,12 +1,15 @@
-import {SET_TYPING_VALUE, SEND_RECOMMENDATION} from "../constants/action-types"
+import {
+  SET_TYPING_VALUE,
+  SEND_RECOMMENDATION,
+} from "../constants/action-types";
 
-export default function typing(state="", action){
-switch(action.type){
+export default function typing(state = "", action) {
+  switch (action.type) {
     case SET_TYPING_VALUE:
-        return action.payload;
+      return action.payload;
     case SEND_RECOMMENDATION:
-        return "";
+      return "";
     default:
-        return state;
-}
+      return state;
+  }
 }

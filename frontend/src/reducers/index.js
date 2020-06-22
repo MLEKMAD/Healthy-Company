@@ -1,14 +1,13 @@
 import { combineReducers } from "redux";
 
 import questionnaireId from "./questionnaireId";
-import typing from "./typing"
-import questionnaires from "./questionnaires"
-import questions from "./questions"
+import typing from "./typing";
+import questionnaires from "./questionnaires";
+import questions from "./questions";
 
 export default combineReducers({
-    questionnaires,
-    questionnaireId,
-    questions,
-    typing
-  });
-
+  questionnaires,
+  questionnaireId,
+  questions,
+  typing,
+});
