@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 import React, { useState, useEffect } from 'react';
 import {Carousel} from 'primereact/carousel';
 import {Button} from 'primereact/button';
+import { Link } from 'react-router-dom';
 
 const User = () => {
     const [questionnaires, setquestionnaires] = useState([
@@ -50,9 +51,9 @@ const User = () => {
                         <div className="car-subtitle">{questionnaire.date} | {questionnaire.author}</div>
 
                         <div className="car-buttons">
+                            <Link to="/quest">
                             <Button icon="pi pi-search" className="p-button-secondary" />
-                            <Button icon="pi pi-star" className="p-button-secondary" />
-                            <Button icon="pi pi-cog" className="p-button-secondary" />
+                            </Link>
                         </div>
                     </div>
                 </div>
