@@ -6,9 +6,9 @@ class AnswersService {
   }
 
   async getAllAnswers() {
-   //returns all Answers
+    //returns all Answers
   }
-  async getAnswers(Answer){
+  async getAnswers(Answer) {
     //returns Answers(yes and nos) in an answer to a questionnaire
-}
+  }
 }
