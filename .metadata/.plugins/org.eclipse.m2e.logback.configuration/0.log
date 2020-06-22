@@ -2009,3 +2009,5 @@ org.eclipse.core.runtime.CoreException: Launch configuration UserServiceApplicat
 2020-06-22 03:52:42,905 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-06-22 03:52:42,905 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2020-06-22 03:52:42,908 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-06-22 03:52:42,913 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-22 03:52:42,914 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Hatim\Desktop\Healthy-Company-master\Healthy-Company\Test_service\src\test\resources

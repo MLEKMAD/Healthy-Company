@@ -28,17 +28,7 @@ export class SignIn extends Component {
     };
   }
   register() {
-    const employeeApi = new EmployeeService();
-    let employee = {
-      lName: this.state.lName,
-      fName: this.state.fName,
-      email: this.state.email,
-      password: this.state.password,
-      state: "initial",
-    };
-    employeeApi.getEmployee(employee).then((response) => {
-      console.log(response);
-    });
+
   }
   render() {
     return (
@@ -49,14 +39,14 @@ export class SignIn extends Component {
       <div className="p-col">
           <InputText id="email" value={this.state.email}
                 onChange={(e) => {
-                  this.setState({ email: e.value });
+                  this.setState({ email: e.target.value });
                 }} type="text"/>
       </div>
   </div>
     <div className="p-field p-grid">
       <label htmlFor="lastname3" className="p-col-fixed" style={{width:'100px'}}>Password</label>
       <div className="p-col">
-      <InputText id="password" value={this.state.password} onChange={(e) => {this.setState({ password: e.value });}} type="password"/>
+      <InputText id="password" value={this.state.password} onChange={(e) => {this.setState({ password: e.target.value });}} type="password"/>
       </div>
 
     </div>
@@ -71,10 +61,10 @@ export class SignIn extends Component {
                 placeholder="Select a Type"
               />
               </div>
-    <Link to='/Dashboard'>
-    <Button type="button" label="Log In"/>
-    </Link>
     <p>Create account? 
+    <Link to= '/Dashboard' >
+          <Button onClick={this.register()} id="btn" label="Log In" type="submit" className="p-button-raised p-button-rounded" />
+    </Link>
     <Link to= '/signup' label="Sign Up" >
     <Button type="button" label="Sign up"/>
     </Link>
@@ -82,7 +72,7 @@ export class SignIn extends Component {
         </div>
     
 
-    );
+    )
   }
 }
 export default SignIn;

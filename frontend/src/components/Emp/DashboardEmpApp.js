@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
-import {AppTopbar} from '../AppTopbar';
-import {AppMenu} from '../AppMenu';
-import {AppProfile} from '../AppProfile';
+import {AppTopbar} from '../../AppTopbar';
+import {AppMenu} from '../../AppMenu';
+import {AppProfileEmp} from '../../AppProfileEmp';
 import {Route} from 'react-router-dom';
-import {DashboardChefProjet} from './DashboardChefProjet';
+import {DashboardEmp} from './DashboardEmp';
 
-import {Dashboard} from './Dashboard';
 
-import {FormsDemo} from './FormsDemo';
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -16,10 +14,10 @@ import 'primeflex/primeflex.css';
 import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 import '@fullcalendar/timegrid/main.css';
-import '../layout/layout.scss';
-import '../App.scss';
+import '../../layout/layout.scss';
+import '../../App.scss';
 
-class DashboardChefProjetApp extends Component {
+class DashboardEmpApp extends Component {
 
     constructor() {
         super();
@@ -89,16 +87,7 @@ class DashboardChefProjetApp extends Component {
 
     createMenu() {
         this.menu = [
-            {label: 'MyDashboard', icon: 'pi pi-fw pi-user ', to:'/DashbordChefProjet'},
-            {label: 'MyEmploye', icon: 'pi pi-fw pi-home', to:'/Dashboard'},
-            {
-                label: 'Components', icon: 'pi pi-fw pi-globe', badge: '9',
-                items: [
-					{label: 'Sample Page', icon: 'pi pi-fw pi-th-large', to: '/sample'},
-					{label: 'Forms', icon: 'pi pi-fw pi-file', to: '/forms'},
-					{label: 'Menus', icon: 'pi pi-fw pi-plus', to: '/menus'},
-                ]
-            }
+            {label: 'MyDashboard', icon: 'pi pi-fw pi-user ', to:'/DashbordEmp'},
         ];
     }
 
@@ -151,13 +140,11 @@ class DashboardChefProjetApp extends Component {
                     <div className="layout-logo">
                         <img alt="Logo" src={'assets/layout/images/logo.svg'} />
                     </div>
-                    <AppProfile />
+                    <AppProfileEmp />
                     <AppMenu model={this.menu} onMenuItemClick={this.onMenuItemClick} />
                 </div>
                 <div className="layout-main">
-                    <Route path="/dashbordChefProjet" exact component={DashboardChefProjet} />
-                    <Route path="/Dashboard" exact component={Dashboard} />
-                    <Route path="/forms" component={FormsDemo} />
+                    <Route path="/dashbordEmp" exact component={DashboardEmp} />
                 </div>
 
                 <div className="layout-mask"></div>
@@ -166,4 +153,4 @@ class DashboardChefProjetApp extends Component {
     }
 }
 
-export default DashboardChefProjetApp;
+export default DashboardEmpApp;

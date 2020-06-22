@@ -15,7 +15,7 @@ import '@fullcalendar/daygrid/main.css';
 import '@fullcalendar/timegrid/main.css';
 import './layout/layout.scss';
 import './App.scss';
-import { DashboardChefProjet } from './components/DashboardChefProjet';
+import { DashboardChefProjet } from './components/chefProjet/DashboardChefProjet';
 
 class App extends Component {
 

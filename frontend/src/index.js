@@ -7,8 +7,8 @@ import { HashRouter } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop';
 import Signin  from './components/Singin';
 import Signup  from './components/Signup';
-import DashboardChefProjetApp  from './components/DashboardChefProjetApp';
-import DashboardEmpApp  from './components/DashboardEmpApp';
+import DashboardChefProjetApp  from './components/chefProjet/DashboardChefProjetApp';
+import DashboardEmpApp  from './components/Emp/DashboardEmpApp';
 
 import Questionnaire  from './components/Questionnaire';
 import Container  from './components/Container';
