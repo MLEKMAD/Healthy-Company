@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_ROOT = 'http://localhost:8083/swagger-ui.html';
+const API_ROOT = 'http://localhost:8083/';
 const TIMEOUT = 60000;
 const HEADERS = {
     'Content-Type': 'application/json',
