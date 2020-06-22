@@ -53,6 +53,7 @@ export class SignIn extends Component {
               mentalState: res.data.etat_emp,
               redirect: "/DashbordEmp",
             });
+            localStorage.setItem("idEmploye",res.data.nom_emp);
           } 
         })
         .catch((error) => {
@@ -73,6 +74,7 @@ export class SignIn extends Component {
               fName: res.data.prenom_chef_projet,
               redirect: "/Dashbord",
             });
+            
           } 
         })
         .catch((error) => {

@@ -138,7 +138,7 @@ class DashboardEmpApp extends Component {
 
                 <div ref={(el) => this.sidebar = el} className={sidebarClassName} onClick={this.onSidebarClick}>
                     <div className="layout-logo">
-                        <img alt="Logo" src={'assets/layout/images/logo.svg'} />
+                        <img alt="Logo" src={'assets/layout/images/psycho.png'} />
                     </div>
                     <AppProfileEmp />
                     <AppMenu model={this.menu} onMenuItemClick={this.onMenuItemClick} />
