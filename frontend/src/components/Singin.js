@@ -10,6 +10,7 @@ import { Button } from "primereact/button";
 import ChefProjetService from "../service/ChefProjetService";
 import EmployeeService from "../service/EmployeeService";
 import { Link, Redirect } from "react-router-dom";
+import ls from 'local-storage';
 
 
 const userTypes = [
@@ -46,6 +47,7 @@ export class SignIn extends Component {
         .then((res) => {
           console.log(res);
           if (res.status === 200) {
+            localStorage.setItem('IdEmploye', res.data.id_employe);
             this.setState({
               lName: res.data.nom_emp,
               fName: res.data.prenom_emp,
