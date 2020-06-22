@@ -38,7 +38,7 @@ public class TestService  {
     }
 
     public Test getFile(String fileId) {
-        return dbFileRepository.findById(fileId)
+        return dbFileRepository.findByIdChefProjet(fileId)
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
     }
     public Test getAllFile() {

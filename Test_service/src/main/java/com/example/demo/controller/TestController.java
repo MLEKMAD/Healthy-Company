@@ -31,7 +31,7 @@ public class TestController {
 
     @Autowired
     private TestService dbFileStorageService;
-
+    @CrossOrigin(origins="http://localhost:3000")
     @PostMapping("/uploadFile/{idChefProjet}")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file,@PathVariable("idChefProjet") long idChefProjet) {
         Test dbFile = dbFileStorageService.storeFile(file,idChefProjet);
@@ -44,7 +44,7 @@ public class TestController {
         return new UploadFileResponse(dbFile.getTest_name(), fileDownloadUri,
                  file.getSize());
     }
-
+    @CrossOrigin(origins="http://localhost:3000")
     @PostMapping("/uploadMultipleFiles/{idchefProjet}")
     public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @PathVariable("idchefProjet") long idChefProjet) {
         return Arrays.asList(files)
@@ -52,7 +52,7 @@ public class TestController {
                 .map(file -> uploadFile(file, idChefProjet))
                 .collect(Collectors.toList());
     }
-
+    @CrossOrigin(origins="http://localhost:3000")
     @GetMapping("/downloadFile/{fileId}")
     public ResponseEntity<Resource> downloadFile(@PathVariable("fileId") String fileId) {
         // Load file from database
@@ -62,15 +62,12 @@ public class TestController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getTest_name() + "\"")
                 .body(new ByteArrayResource(dbFile.getTest_content()));
     }
-    
-    @GetMapping("/downloadAllFile")
-    public ResponseEntity<Resource> downloadFile() {
-        // Load file from database
-        Test dbFile = dbFileStorageService.getAllFile();
-
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getTest_name() + "\"")
-                .body(new ByteArrayResource(dbFile.getTest_content()));
+    @CrossOrigin(origins="http://localhost:3000")   
+    @SuppressWarnings("unchecked")
+	@GetMapping("/getAllFile")
+    public List<Test> getAllFile() {
+    	List<Test> tests=(List<Test>) dbFileStorageService.getAllFile();
+        return tests;
     }
 
 }

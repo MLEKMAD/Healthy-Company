@@ -11,6 +11,7 @@ import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +34,7 @@ public class TestRecController {
 
 	    @Autowired
 	    private TestRecService dbFileStorageService;
-
+	    @CrossOrigin(origins="http://localhost:3000")
 	    @PostMapping("/uploadFileRec/{idChefProjet}")
 	    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file,@PathVariable("idChefProjet") long idChefProjet) {
 	        Recommandation dbFile = dbFileStorageService.storeFile(file,idChefProjet);
@@ -46,7 +47,7 @@ public class TestRecController {
 	        return new UploadFileResponse(dbFile.getRec_name(), fileDownloadUri,
 	                 file.getSize());
 	    }
-
+	    @CrossOrigin(origins="http://localhost:3000")
 	    @PostMapping("/uploadMultipleFilesRec/{idchefProjet}")
 	    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @PathVariable("idchefProjet") long idChefProjet) {
 	        return Arrays.asList(files)
@@ -54,7 +55,7 @@ public class TestRecController {
 	                .map(file -> uploadFile(file, idChefProjet))
 	                .collect(Collectors.toList());
 	    }
-
+	    @CrossOrigin(origins="http://localhost:3000")
 	    @GetMapping("/downloadFileRec/{fileId}")
 	    public ResponseEntity<Resource> downloadFile(@PathVariable("fileId") String fileId) {
 	        // Load file from database
@@ -64,7 +65,7 @@ public class TestRecController {
 	                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getRec_name() + "\"")
 	                .body(new ByteArrayResource(dbFile.getRec_content()));
 	    }
-	    
+	    @CrossOrigin(origins="http://localhost:3000")
 	    @GetMapping("/downloadAllFileRec")
 	    public ResponseEntity<Resource> downloadAllFile() {
 	        // Load file from database

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Recommandation;
 @Repository
-public interface TestRecRepository extends JpaRepository<Recommandation,String>{
+public interface TestRecRepository extends JpaRepository<Recommandation,Integer>{
     @Query(nativeQuery = true ,value =  "SELECT * FROM files_recommandation c where c.id_chef_projet =:id_chef_projet")
     Optional<Recommandation> findByIdChefProjet(@Param("id_chef_projet") String id_chef_projet);
 

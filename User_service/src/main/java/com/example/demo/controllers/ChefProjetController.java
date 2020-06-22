@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,34 +22,35 @@ import io.swagger.annotations.Api;
 public class ChefProjetController {
 
 	
-	  @Autowired
+		@Autowired
 		ChefProjetServices chefprojetservice;
-
+		@CrossOrigin(origins="http://localhost:3000")
 	    @RequestMapping(method=RequestMethod.GET,value="/chefprojet/all")
 	    public List<ChefProjet> getAllChefProjet(){
 	    	System.out.println("get all employes controller");
 	        return chefprojetservice.getAllChefProjet();
 	    }
-
+		@CrossOrigin(origins="http://localhost:3000")
 	    @RequestMapping(method=RequestMethod.GET,value="/chefprojet/{id_chef_projet}")
 	    public ChefProjet getChefProjet(@PathVariable long id_chef_projet) throws ChefProjetNotFoundException {
 	        return chefprojetservice.getChefProjet(id_chef_projet);
 	    }
-
+		@CrossOrigin(origins="http://localhost:3000")
 	    @RequestMapping(method=RequestMethod.POST,value="/chefprojet")
 	    public ChefProjet createChefProjet(@RequestBody ChefProjet chefprojet){
 	        return chefprojetservice.createChefProjet(chefprojet);
 	    }
-	    @RequestMapping(method=RequestMethod.POST,value="/loginchefprojet")
+		@CrossOrigin(origins="http://localhost:3000")
+		@RequestMapping(method=RequestMethod.POST,value="/loginchefprojet")
 	    public ChefProjet loadByEmailPassword(String email, String password) throws ChefProjetNotFoundException{
 	        return chefprojetservice.loadByEmailPassword(email, password);
 	    }
-
+		@CrossOrigin(origins="http://localhost:3000")
 	    @RequestMapping(method=RequestMethod.PUT,value="/chefprojet")
 	    public void updateChefProjet(@RequestBody ChefProjet chefprojet) throws ChefProjetNotFoundException {
 	    	chefprojetservice.updateChefProjet(chefprojet);
 	    }
-
+		@CrossOrigin(origins="http://localhost:3000")
 	    @RequestMapping(method=RequestMethod.DELETE,value="/chefprojet/{id_chef_projet}")
 	    public void deleteChefProjet(@PathVariable long id_chef_projet) throws ChefProjetNotFoundException {
 	    	chefprojetservice.deleteChefProjet(id_chef_projet);

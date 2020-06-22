@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="Test_service"/>
+<aop-project name="User_service"/>
+<aop-project name="user"/>
+</aop-reference-model>

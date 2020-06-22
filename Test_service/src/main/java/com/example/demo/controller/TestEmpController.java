@@ -9,6 +9,7 @@ import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,7 +30,7 @@ public class TestEmpController {
 
     @Autowired
     private TestEmpService dbFileEmpStorageService;
-
+    @CrossOrigin(origins="http://localhost:3000")
     @PostMapping("/uploadFileEmp/{idChefProjet}")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file,@PathVariable("idChefProjet") long idChefProjet) {
         TestEmp dbFile = dbFileEmpStorageService.storeFile(file,idChefProjet);
@@ -42,7 +43,7 @@ public class TestEmpController {
         return new UploadFileResponse(dbFile.getTest_name(), fileDownloadUri,
                  file.getSize());
     }
-
+    @CrossOrigin(origins="http://localhost:3000")
     @PostMapping("/uploadMultipleFilesEmp/{idchefProjet}")
     public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @PathVariable("idchefProjet") long idChefProjet) {
         return Arrays.asList(files)
@@ -50,16 +51,17 @@ public class TestEmpController {
                 .map(file -> uploadFile(file, idChefProjet))
                 .collect(Collectors.toList());
     }
-
+    @CrossOrigin(origins="http://localhost:3000")
     @GetMapping("/downloadFileEmp/{fileId}")
     public ResponseEntity<Resource> downloadFile(@PathVariable("fileId") String fileId) {
         // Load file from database
-        TestEmp dbFile = dbFileEmpStorageService.getFile(fileId);
+        TestEmp dbFile = dbFileEmpStorageService.getFileByid(fileId);
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getTest_name() + "\"")
                 .body(new ByteArrayResource(dbFile.getTest_content()));
     }
+    @CrossOrigin(origins="http://localhost:3000")
     @GetMapping("/downloadFileEmp/{id_emp}")
     public ResponseEntity<Resource> downloadFileById(@PathVariable("id_emp") String id_emp) {
         // Load file from database
@@ -69,7 +71,7 @@ public class TestEmpController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getTest_name() + "\"")
                 .body(new ByteArrayResource(dbFile.getTest_content()));
     }
-    
+    @CrossOrigin(origins="http://localhost:3000")
     @GetMapping("/downloadAllFileEmp")
     public ResponseEntity<Resource> downloadAllFile() {
         // Load file from database

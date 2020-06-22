@@ -36,10 +36,6 @@ public class TestEmpService {
         }
     }
 
-    public TestEmp getFile(String fileId) {
-        return dbFileEmpRepository.findById(fileId)
-                .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
-    }
     public TestEmp getFileByid(String id_emp) {
         return dbFileEmpRepository.findByIdChefProjet(id_emp)
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + id_emp));

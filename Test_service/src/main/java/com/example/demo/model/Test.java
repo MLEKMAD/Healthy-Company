@@ -21,7 +21,11 @@ public class Test {
 
     public Test() {
     }
+    public Test( String name, long id1 ){
+        this.test_name = name;
+        this.id_chef_projet = id1;
 
+    }
     public Test( String name, byte[] test, long id1 ){
         this.test_content = test;
         this.test_name = name;
