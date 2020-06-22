@@ -39,7 +39,7 @@ public class TestRecService {
     }
 
     public Recommandation getFile(String fileId) {
-        return dbFileRecRepository.findById(fileId)
+        return dbFileRecRepository.findByIdChefProjet(fileId)
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
     }
     public Recommandation getAllFile() {

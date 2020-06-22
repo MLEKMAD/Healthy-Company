@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.Recommandation;
 import com.example.demo.model.TestEmp;
 @Repository
-public interface TestEmpRepository extends JpaRepository<TestEmp,String>{
+public interface TestEmpRepository extends JpaRepository<TestEmp,Integer>{
     @Query(nativeQuery = true ,value =  "SELECT * FROM file_employe c where c.id_emp =:id_emp")
     Optional<TestEmp> findByIdChefProjet(@Param("id_emp") String id_emp);
 
