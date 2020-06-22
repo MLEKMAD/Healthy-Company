@@ -19,16 +19,15 @@ const userTypes = [
 export class SignUp extends Component {
   constructor(props) {
     super(props);
-    this.register = this.register.bind(this)
+    this.register = this.register.bind(this);
     this.state = {
       fName: "",
       lName: "",
       email: "",
       password: "",
-      etat:'nothing',
+      etat: "nothing",
       redirect: null,
-      type:null
-
+      type: null,
     };
   }
   register() {
@@ -39,23 +38,22 @@ export class SignUp extends Component {
       password_emp: this.state.password,
       etat_emp: this.state.etat,
       id_chef_projet: 1,
-    }
-    console.log("employee",employee)
-    
-    axios.post("http://localhost:8083/employe",JSON.stringify(employee),{
-      headers: { 'content-type':'application/json; charset=UTF-8'}
-  }).then(
-      (res)=>{
-        console.log(res)
-          this.setState({redirect:"/DashbordEmp"})
-      }
-    ).catch(err=>{
-      if(err.response){
-        console.log(err.response)
-      }
-    })
+    };
+    console.log("employee", employee);
 
-   
+    axios
+      .post("http://localhost:8083/employe", JSON.stringify(employee), {
+        headers: { "content-type": "application/json; charset=UTF-8" },
+      })
+      .then((res) => {
+        console.log(res);
+        this.setState({ redirect: "/DashbordEmp" });
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err.response);
+        }
+      });
   }
   render() {
     if (this.state.redirect) {
@@ -149,16 +147,26 @@ export class SignUp extends Component {
               />
             </span>
           </div>
-   
-          <Button onClick={()=>{this.register()}} id="btn" label="Submit" type="submit" className="p-button-raised p-button-rounded" />
-    
+
+          <Button
+            onClick={() => {
+              this.register();
+            }}
+            id="btn"
+            label="Submit"
+            type="submit"
+            className="p-button-raised p-button-rounded"
+          />
 
           <p>
             You already have an account?
-    <Link to= '/' label="Sign Up" >
-             <Button id="btn1" className="p-button-raised p-button-rounded" label="Sign In"></Button>
-    </Link>
-
+            <Link to="/" label="Sign Up">
+              <Button
+                id="btn1"
+                className="p-button-raised p-button-rounded"
+                label="Sign In"
+              ></Button>
+            </Link>
           </p>
         </div>
       </div>

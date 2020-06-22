@@ -10,7 +10,7 @@ import { Button } from "primereact/button";
 import ChefProjetService from "../service/ChefProjetService";
 import EmployeeService from "../service/EmployeeService";
 import { Link, Redirect } from "react-router-dom";
-import ls from 'local-storage';
+import ls from "local-storage";
 
 const userTypes = [
   { label: "employee", value: 0 },
@@ -42,19 +42,21 @@ export class SignIn extends Component {
     // let history = useHistory();
     if (this.state.type === 0) {
       axios
-        .post(`http://localhost:8083/loginemploye?email=${email}&password=${password}`)
+        .post(
+          `http://localhost:8083/loginemploye?email=${email}&password=${password}`
+        )
         .then((res) => {
           console.log(res);
           if (res.status === 200) {
-            localStorage.setItem('IdEmploye', res.data.id_employe);
+            localStorage.setItem("IdEmploye", res.data.id_employe);
             this.setState({
               lName: res.data.nom_emp,
               fName: res.data.prenom_emp,
               mentalState: res.data.etat_emp,
               redirect: "/DashbordEmp",
             });
-            localStorage.setItem("idEmploye",res.data.nom_emp);
-          } 
+            localStorage.setItem("idEmploye", res.data.nom_emp);
+          }
         })
         .catch((error) => {
           if (error.response) {
@@ -65,7 +67,9 @@ export class SignIn extends Component {
         });
     } else {
       axios
-        .post(`http://localhost:8083/loginchefprojet?email=${email}&password=${password}`)
+        .post(
+          `http://localhost:8083/loginchefprojet?email=${email}&password=${password}`
+        )
         .then((res) => {
           console.log(res);
           if (res.status === 200) {
@@ -74,8 +78,7 @@ export class SignIn extends Component {
               fName: res.data.prenom_chef_projet,
               redirect: "/Dashbord",
             });
-            
-          } 
+          }
         })
         .catch((error) => {
           if (error.response) {
@@ -98,55 +101,76 @@ export class SignIn extends Component {
       return <Redirect to={this.state.redirect} />;
     }
     return (
-      <div style={{
-        position: 'absolute', left: '50%', top: '50%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor :' rgb(3, 252, 186)',
-        borderRadius: '25px',
-         width: '300px',
-        height: '500px', 
-
-    }}>
-        <h1 style ={{textAlign :'center'}}> Sign In</h1>
-        <br/>
-        <br/>
-        <br/>
-
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+          backgroundColor: " rgb(3, 252, 186)",
+          borderRadius: "25px",
+          width: "300px",
+          height: "500px",
+        }}
+      >
+        <h1 style={{ textAlign: "center" }}> Sign In</h1>
+        <br />
+        <br />
+        <br />
         <div className="p-field p-grid">
-          
-          
-          <span className="p-float-label" style={{
-              margin:'0',
-              position: 'absolute',
-               top :'15%',
-               left: '50%',
-             transform: 'translate(-50%, -50%)'}}>
-          <InputText id="email" value={this.state.email} onChange={this.handleChangeE} type="email" required={true} />
-                <label htmlFor="float-input">Email</label>
-            </span>
+          <span
+            className="p-float-label"
+            style={{
+              margin: "0",
+              position: "absolute",
+              top: "15%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <InputText
+              id="email"
+              value={this.state.email}
+              onChange={this.handleChangeE}
+              type="email"
+              required={true}
+            />
+            <label htmlFor="float-input">Email</label>
+          </span>
         </div>
         <div className="p-field p-grid">
-      
+          <span
+            className="p-float-label"
+            style={{
+              margin: "0",
+              position: "absolute",
+              top: "25%",
 
-          
-          <span className="p-float-label" style={{
-              margin:'0',
-              position: 'absolute',
-              top :'25%',
-
-               left: '50%',
-             transform: 'translate(-50%, -50%)'}}>
-          <InputText id="password" required={true} value={this.state.password} onChange={this.handleChangeP} type="password" />
-                <label htmlFor="float-input">Password</label>
-            </span>
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <InputText
+              id="password"
+              required={true}
+              value={this.state.password}
+              onChange={this.handleChangeP}
+              type="password"
+            />
+            <label htmlFor="float-input">Password</label>
+          </span>
         </div>
-        <div className="p-col" style={{
-              margin:'0',
-              position: 'absolute',
-              top :'35%',
+        <div
+          className="p-col"
+          style={{
+            margin: "0",
+            position: "absolute",
+            top: "35%",
 
-               left: '50%',
-             transform: 'translate(-50%, -50%)'}}>
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
           <Dropdown
             id="id5"
             value={this.state.type}
@@ -157,34 +181,43 @@ export class SignIn extends Component {
             placeholder="Select a Type"
           />
         </div>
-        <br/>
-        <br/>
-
-        <Button style={{
-              margin:'0',
-              position: 'absolute',
-               top :'60%',
-               left: '50%',
-             transform: 'translate(-50%, -50%)'}}
-             onClick={()=>{this.register(email, password)}} type="submit" label="Log In" />
-        <br/>      <br/> <br/>   <br/> <br/>  <br/> 
-        <br/> 
-        <br/> 
-        <br/> 
-        <br/> 
-        <br/> 
-        <br/> 
-
+        <br />
+        <br />
+        <Button
+          style={{
+            margin: "0",
+            position: "absolute",
+            top: "60%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+          onClick={() => {
+            this.register(email, password);
+          }}
+          type="submit"
+          label="Log In"
+        />
+        <br /> <br /> <br /> <br /> <br /> <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <p>
-          Create account? <br/>          <br/>
-      
+          Create account? <br /> <br />
           <Link to="/signup" label="Sign Up">
-            <Button style={{
-              margin:'0',
-              position: 'absolute',
-               top :'80%',
-               left: '50%',
-             transform: 'translate(-50%, -50%)'}} type="button" label="Sign up" />
+            <Button
+              style={{
+                margin: "0",
+                position: "absolute",
+                top: "80%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+              type="button"
+              label="Sign up"
+            />
           </Link>
         </p>
       </div>
