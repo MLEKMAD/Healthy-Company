@@ -4,19 +4,20 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import './User.css'
 import ReactDOM from 'react-dom';
-
+import axios from 'axios'
 import React, { useState, useEffect } from 'react';
 import {Carousel} from 'primereact/carousel';
 import {Button} from 'primereact/button';
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
 
 const User = () => {
     const [questionnaires, setquestionnaires] = useState([
-        {"title": "VW", "date": 2012, "author": "Orange" },
-        {"title": "Audi", "date": 2011, "author": "Black"},
-        {"title": "Renault", "date": 2005, "author": "Gray"},
-        {"title": "BMW", "date": 2003, "author": "Blue"},
-        {"title": "Mercedes", "date": 1995, "author": "Orange"},
+        {"title": "Questionnaire 1", "date": 2020, "author": "LAHLALI HATIM" },
+        {"title": "Questionnaire 2", "date": 2020, "author": "LAHLALI HATIM"},
+        {"title": "Questionnaire 3", "date": 2020, "author": "LAHLALI HATIM"},
+        {"title": "Questionnaire 4", "date": 2020, "author": "LAHLALI HATIM"},
+        {"title": "Questionnaire 5", "date": 2020, "author": "LAHLALI HATIM"},
     ]);
     const responsiveOptions = [
         {
@@ -36,22 +37,31 @@ const User = () => {
         }
     ];
 
-    useEffect(() => {
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    // useEffect(() => {
+    //     let questions = []
+    //     axios.get("http://localhost:8083/questionnaire/all").then((res)=>{
+    //         questions = res.data.map((item)=>{
+    //         return {title:item.title_questionnaire,date:2020,author:"HATIM LAHLALI"}
+    //         })
+    //         setquestionnaires(questions)
+    //         console.log('questions',questions);
+    //         console.log("ques",this.state.questionnaires);
+    //     })
+    // }); // eslint-disable-line react-hooks/exhaustive-deps
 
     const questionnaireTemplate = (questionnaire) => {
         return (
             <div className="car-details">
                 <div className="p-grid p-nogutter">
                     <div className="p-col-12">
-                        <img src={`showcase/demo/images/questionnaire/${questionnaire.title}.png`} srcSet="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" alt={questionnaire.title} />
+                        <img src={"assets/layout/images/quest.png"}  alt={questionnaire.title} />
                     </div>
                     <div className="p-col-12 car-data">
                         <div className="car-title">{questionnaire.title}</div>
                         <div className="car-subtitle">{questionnaire.date} | {questionnaire.author}</div>
 
                         <div className="car-buttons">
-                            <Link to="/quest">
+                            <Link to="/Questionnaire">
                             <Button icon="pi pi-search" className="p-button-secondary" />
                             </Link>
                         </div>

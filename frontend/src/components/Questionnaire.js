@@ -7,7 +7,9 @@ import {Fieldset} from 'primereact/fieldset';
 import {RadioButton} from 'primereact/radiobutton';
 import {SelectButton} from 'primereact/selectbutton';
 import TestsService from '../service/TestsService';
-
+import "./Questionnaire.css"
+import Axios from 'axios';
+import { Button } from 'primereact/button';
 
 const Questionnaire = (/*{questionnaire}*/)=>{
 
@@ -16,9 +18,10 @@ const Questionnaire = (/*{questionnaire}*/)=>{
 
      const [title, setTitle] =useState( "Anger Management");
      const [questions,setQuestions] = useState ([
-        "Why mad bitch?",
-        "Take a chill pill maybe?",
-        "Have you tried NOT beating your wife?"
+        "Do you think you are in a bad mood every time you are at work?",
+        "Do you take in pills",
+        "Do you believe your relationship with your coworkers is good?",
+
     ]);
     const [values,setValues] = useState([]);
     
@@ -27,7 +30,9 @@ const Questionnaire = (/*{questionnaire}*/)=>{
         {label: 'Yes', value: 'Yes'},
         {label: 'No', value: 'No'},
     ]
-
+    const finishAnswers = ()=>{
+        console.log('here');
+    }
     const setAnswersSoFarfunc = (index, answer) => { 
         var key = index;
         var obj2 = {};
@@ -46,6 +51,14 @@ const Questionnaire = (/*{questionnaire}*/)=>{
             answersSoFar[index] = obj2;
         }
      }
+     useEffect(() => {
+         let qsts =[]
+        Axios.get("http://localhost:8083/questionnaire/all").then((res)=>{
+            qsts = res.data.split("?");
+            console.log("questions",qsts)
+            setQuestions(qsts);
+        })
+     })
      const setJustificationsSoFarfunc = (index, just) => { 
         var key = index;
         var obj =  {};
@@ -77,7 +90,7 @@ const Questionnaire = (/*{questionnaire}*/)=>{
                  var num= index + 1;
                  var leg = 'Question '+num;
                  return(
-            <div className="p-col">
+            <div className=" Questionnaire">
                 <Fieldset legend={leg}>
                     {question}
                 </Fieldset>
@@ -104,7 +117,10 @@ const Questionnaire = (/*{questionnaire}*/)=>{
         };
 
     return(
-        renderQuestionnaire(questions)
+        <div className='Questionnaire'>
+        {renderQuestionnaire(questions)}
+        <Button onclick={finishAnswers} label='Submit'/>
+        </div>
     );
    
 

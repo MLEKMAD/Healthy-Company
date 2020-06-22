@@ -10,7 +10,8 @@ import { Button } from "primereact/button";
 import ChefProjetService from "../service/ChefProjetService";
 import EmployeeService from "../service/EmployeeService";
 import { Link, Redirect } from "react-router-dom";
-import ls from 'local-storage';
+
+
 
 const userTypes = [
   { label: "employee", value: 0 },
@@ -53,7 +54,6 @@ export class SignIn extends Component {
               mentalState: res.data.etat_emp,
               redirect: "/DashbordEmp",
             });
-            localStorage.setItem("idEmploye",res.data.nom_emp);
           } 
         })
         .catch((error) => {
@@ -72,9 +72,8 @@ export class SignIn extends Component {
             this.setState({
               lName: res.data.nom_chef_projet,
               fName: res.data.prenom_chef_projet,
-              redirect: "/Dashbord",
+              redirect: "/DashbordChefProjet",
             });
-            
           } 
         })
         .catch((error) => {
