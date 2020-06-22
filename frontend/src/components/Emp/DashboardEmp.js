@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { CarService } from "../../service/CarService";
 import { Panel } from "primereact/panel";
@@ -13,13 +12,13 @@ import { Button } from "primereact/button";
 import { Growl } from "primereact/growl";
 import { FileUpload } from "primereact/fileupload";
 import { Messages } from "primereact/messages";
-import Questionnaire from '../Questionnaire';
+import Questionnaire from "../Questionnaire";
 
 export class DashboardEmp extends Component {
   constructor() {
     super();
     this.showSuccess = this.showSuccess.bind(this);
-    this.onUpload = this.onUpload.bind(this)
+    this.onUpload = this.onUpload.bind(this);
     this.state = {
       tasks: [],
       tests: [
@@ -30,7 +29,15 @@ export class DashboardEmp extends Component {
       city: null,
       selectedCar: null,
       lineData: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+        ],
         datasets: [
           {
             label: "First Dataset",
@@ -62,20 +69,19 @@ export class DashboardEmp extends Component {
     this.onCityChange = this.onCityChange.bind(this);
   }
 
-
-  onUpload(e){
+  onUpload(e) {
     this.growl.show({
-        severity: 'info',
-        summary: 'Success',
-        detail: 'File Uploaded'
+      severity: "info",
+      summary: "Success",
+      detail: "File Uploaded",
     });
     this.messages.show({
-        severity: 'info',
-        summary: 'Success',
-        detail: 'File Uploaded'
+      severity: "info",
+      summary: "Success",
+      detail: "File Uploaded",
     });
 
-    console.log("event",e.value);
+    console.log("event", e.value);
   }
   onTaskChange(e) {
     let selectedTasks = [...this.state.tasks];
@@ -89,7 +95,6 @@ export class DashboardEmp extends Component {
     this.setState({ city: e.value });
   }
 
-
   // componentDidMount() {
   //     this.carservice.getCarsSmall().then(data => this.setState({cars: data}));
   // }
@@ -99,8 +104,8 @@ export class DashboardEmp extends Component {
     this.messages.show(msg);
   }
   render() {
-      let employe = localStorage.getItem("idEmploye");
-      console.log("employee",employe)
+    let employe = localStorage.getItem("idEmploye");
+    console.log("employee", employe);
     return (
       <div>
         <div className="card card-w-title ">
@@ -116,7 +121,11 @@ export class DashboardEmp extends Component {
               <InputText placeholder="Mohammed@gmail.com" disabled={true} />
             </div>
             <div className="p-col-12 " style={{ textAlign: "center" }}>
-              <Button label="Malade" style={{ marginBottom: "10px" }} className="p-button-danger p-button-rounded" />
+              <Button
+                label="Malade"
+                style={{ marginBottom: "10px" }}
+                className="p-button-danger p-button-rounded"
+              />
             </div>
           </div>
         </div>
@@ -126,29 +135,49 @@ export class DashboardEmp extends Component {
               <div className="p-col" style={{ textAlign: "center" }}>
                 <h1>Telecharger test</h1>
                 <a href={`http://localhost:8084/downloadFile/1`} download>
-                  <Button onClick={this.showSuccess} label="Download test" className="p-button-success" style={{ width: "10em", marginRight: ".25em" }} />
+                  <Button
+                    onClick={this.showSuccess}
+                    label="Download test"
+                    className="p-button-success"
+                    style={{ width: "10em", marginRight: ".25em" }}
+                  />
                 </a>
                 <Messages ref={(el) => (this.messages = el)} />
-                <Growl ref={(el) => (this.growl = el)} style={{ marginTop: "75px" }} />
+                <Growl
+                  ref={(el) => (this.growl = el)}
+                  style={{ marginTop: "75px" }}
+                />
               </div>
             </div>
             <div className="card card-w-title">
               <h1>Upload reponse du test </h1>
               <Growl ref={(el) => (this.growl = el)} />
-              <FileUpload name="demo[]" url={"http://localhost:8084/uploadFile/1"}  onUpload={this.onUpload} multiple={true} accept="*" maxFileSize={1000000} />
+              <FileUpload
+                name="demo[]"
+                url={"http://localhost:8084/uploadFile/1"}
+                onUpload={this.onUpload}
+                multiple={true}
+                accept="*"
+                maxFileSize={1000000}
+              />
             </div>
           </div>
           <div className="card  card-w-title p-col-12 p-lg-6 p-xl-6">
             <h1>Mon historique </h1>
-            <DataTable value={this.state.tests} style={{ marginBottom: "20px" }} responsive={true} selectionMode="single" selection={this.state.selectedCar} onSelectionChange={(e) => this.setState({ selectedCar: e.value })}>
+            <DataTable
+              value={this.state.tests}
+              style={{ marginBottom: "20px" }}
+              responsive={true}
+              selectionMode="single"
+              selection={this.state.selectedCar}
+              onSelectionChange={(e) => this.setState({ selectedCar: e.value })}
+            >
               <Column field="nom test" header="nom test" sortable={true} />
               <Column field="test" header="test" sortable={true} />
             </DataTable>
           </div>
-          <Questionnaire/>
-
+          <Questionnaire />
         </div>
-        
       </div>
     );
   }
