@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "file-saver": "^2.0.2",
+    "history": "^5.0.0",
     "primeflex": "^1.1.1",
     "primeicons": "^2.0.0",
     "primereact": "^4.2.2",

@@ -20,7 +20,7 @@ class EmployeeService {
   }
   async loginEmployee(email, password){
     let data = {email:email,password:password}
-    let employee = await this.myApi.post(`/loginemploye`,data);
+    let employee = await this.myApi.post("/loginemploye",data);
     return employee;
   }
 
