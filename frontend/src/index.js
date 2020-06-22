@@ -23,8 +23,8 @@ ReactDOM.render(
                 <Route exact path="/" component={Signin} />
                 <Route exact path="/signup" component={Signup} />          
                 <Route exact path="/Dashboard" component={App} />
-                <Route exact path="/DashbordChefProjet" component={DashboardChefProjetApp} />
-                <Route exact path="/DashbordEmp" component={DashboardEmpApp} />
+                <Route exact path="/DashboardChefProjet" component={DashboardChefProjetApp} />
+                <Route exact path="/DashboardEmp" component={DashboardEmpApp} />
 
                 <Route exact path="/Questionnaire" component={Questionnaire} />
                 <Route exact path="/Container" component={Container} />

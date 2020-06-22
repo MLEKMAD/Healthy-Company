@@ -12,7 +12,7 @@ import {Button} from 'primereact/button';
 import {Growl} from 'primereact/growl';
 import {FileUpload} from 'primereact/fileupload';
 import {Messages} from 'primereact/messages';
-
+import Questionnaire from '../Questionnaire';
 
 export class DashboardEmp extends Component {
 
@@ -130,6 +130,7 @@ export class DashboardEmp extends Component {
                         </DataTable>
                     </div>
                 </div>
+                <Questionnaire/>
                     
         </div>
         );

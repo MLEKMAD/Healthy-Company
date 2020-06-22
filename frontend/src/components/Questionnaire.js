@@ -12,12 +12,6 @@ import TestsService from '../service/TestsService';
 const Questionnaire = (/*{questionnaire}*/)=>{
 
 
-    useEffect(async () => {
-       
-     
-
-
-    })
     //const {title, questionnaire_id  } = questionnaire;
 
      const [title, setTitle] =useState( "Anger Management");
