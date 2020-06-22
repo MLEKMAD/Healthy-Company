@@ -4,11 +4,12 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import './User.css'
 import ReactDOM from 'react-dom';
-
+import axios from 'axios'
 import React, { useState, useEffect } from 'react';
 import {Carousel} from 'primereact/carousel';
 import {Button} from 'primereact/button';
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
 
 const User = () => {
     const [questionnaires, setquestionnaires] = useState([
@@ -36,8 +37,17 @@ const User = () => {
         }
     ];
 
-    useEffect(() => {
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    // useEffect(() => {
+    //     let questions = []
+    //     axios.get("http://localhost:8083/questionnaire/all").then((res)=>{
+    //         questions = res.data.map((item)=>{
+    //         return {title:item.title_questionnaire,date:2020,author:"HATIM LAHLALI"}
+    //         })
+    //         setquestionnaires(questions)
+    //         console.log('questions',questions);
+    //         console.log("ques",this.state.questionnaires);
+    //     })
+    // }); // eslint-disable-line react-hooks/exhaustive-deps
 
     const questionnaireTemplate = (questionnaire) => {
         return (

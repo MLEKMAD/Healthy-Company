@@ -72,7 +72,7 @@ export class SignIn extends Component {
             this.setState({
               lName: res.data.nom_chef_projet,
               fName: res.data.prenom_chef_projet,
-              redirect: "/Dashbord",
+              redirect: "/DashbordChefProjet",
             });
           } 
         })

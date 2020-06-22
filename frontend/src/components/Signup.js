@@ -194,6 +194,8 @@ export class SignUp extends Component {
                top :'80%',
                left: '50%',
              transform: 'translate(-50%, -50%)'}} type="button" label="Sign up" />
+
+             {/* <div>Have an account? <Link to='./'> <Button label='Sign In'/> </Link>< </div> */}
         </p>
         </div>
 

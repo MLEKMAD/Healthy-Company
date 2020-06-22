@@ -7,8 +7,9 @@ import "primeflex/primeflex.css";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
-
+import axios from 'axios'
 import "./Sign.css";
+import Axios from "axios";
 
 const userTypes = [
   { label: "employee", value: 0 },
@@ -23,6 +24,11 @@ export class MakeQuestionnaire extends Component {
       questions: [],
     };
   }
+
+  // useEffect(() => {
+  //   axios
+  // })
+
 
   render() {
     return (

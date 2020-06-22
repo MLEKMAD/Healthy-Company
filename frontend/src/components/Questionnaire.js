@@ -53,8 +53,9 @@ const Questionnaire = (/*{questionnaire}*/)=>{
      }
      useEffect(() => {
          let qsts =[]
-        Axios.get("http://localhost:8083/questions").then((res)=>{
+        Axios.get("http://localhost:8083/questionnaire/all").then((res)=>{
             qsts = res.data.split("?");
+            console.log("questions",qsts)
             setQuestions(qsts);
         })
      })
