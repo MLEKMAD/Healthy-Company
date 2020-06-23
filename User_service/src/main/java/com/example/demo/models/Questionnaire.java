@@ -18,16 +18,12 @@ public class Questionnaire {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id_questionnaire")
-	@ApiModelProperty(notes="unique id of the employe")
 	private long id_questionnaire;
 	@Column(name="title_questionnaire")
-	@ApiModelProperty(notes="")
 	private String title_questionnaire;
 	@Column(name="questionnaire")
-	@ApiModelProperty(notes="")
 	private String questionnaire;
 	@Column(name="id_chef_projet")
-	@ApiModelProperty(notes="data of project lead of the employe")
 	private long id_chef_projet;
 	public Questionnaire() {
 		super();

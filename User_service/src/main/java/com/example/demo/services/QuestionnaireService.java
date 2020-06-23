@@ -2,18 +2,14 @@ package com.example.demo.services;
 
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 import com.example.demo.models.Questionnaire;
-import com.example.demo.models.Reponse;
 import com.example.demo.repositories.EmployeNotFoundException;
 import com.example.demo.repositories.QuestionnaireRepository;
 
@@ -36,13 +32,7 @@ public class QuestionnaireService {
 				.orElseThrow(() -> new EmployeNotFoundException(id_Questionnaire));
 		return questionnaire;
 	}
-/*	public Questionnaire getQuestionnaireIdChef(long idchefprojet) throws EmployeNotFoundException {
-		Questionnaire questionnaire = QuestionnaireRepo
-				.findByQuestionByIdChef(idchefprojet)
-				.orElseThrow(() -> new EmployeNotFoundException(idchefprojet));
-		return questionnaire;
-	}	
-*/
+
 	
 	public Questionnaire createQuestionnaire(Questionnaire questionnaire){
 		return QuestionnaireRepo.save(questionnaire);

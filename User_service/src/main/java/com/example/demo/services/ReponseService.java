@@ -7,11 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.models.Employe;
-import com.example.demo.models.Questionnaire;
 import com.example.demo.models.Reponse;
 import com.example.demo.repositories.EmployeNotFoundException;
-import com.example.demo.repositories.QuestionnaireRepository;
 import com.example.demo.repositories.ReponseRepository;
 @Service
 @Transactional

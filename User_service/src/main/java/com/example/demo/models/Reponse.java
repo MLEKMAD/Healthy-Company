@@ -15,16 +15,12 @@ public class Reponse {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id_reponse")
-	@ApiModelProperty(notes="unique id of the employe")
 	private long id_reponse;
 	@Column(name="id_questionnaire")
-	@ApiModelProperty(notes="")
 	private long id_questionnaire;
 	@Column(name="reponse")
-	@ApiModelProperty(notes="")
 	private String reponse;
 	@Column(name="id_emp")
-	@ApiModelProperty(notes="unique id of the employe")
 	private long id_emp;	
 	
 	public Reponse() {
